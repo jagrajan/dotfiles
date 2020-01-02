@@ -102,6 +102,10 @@ nnoremap <Leader>rv :so $MYVIMRC<cr>
 nnoremap <Leader>rc :tabedit ~/.zshrc<cr>
 nnoremap <Leader>fw :FixWhitespace<cr>
 nnoremap <Leader>gc :Gcommit<cr>
+nnoremap <Leader>gd :Gdiff<cr>
+nnoremap <Leader>gw :Gwrite<cr>
+nnoremap <Leader>gr :Gread<cr>
+nnoremap <Leader>gp :Gpush<cr>
 nnoremap <Leader>gg :Gstatus<cr> :tabedit %<cr>
 nnoremap <Leader>zz :tabedit %<cr>
 nnoremap <Leader>tt :tabedit +terminal<cr>
