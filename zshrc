@@ -108,6 +108,9 @@ alias bl="xbacklight -set"
 export VISUAL=nvim
 export EDITOR=nvim
 
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
