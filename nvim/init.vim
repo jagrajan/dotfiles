@@ -17,6 +17,7 @@ Plug 'meain/vim-automkdir'
 Plug 'tpope/vim-eunuch'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'digitaltoad/vim-pug'
 Plug 'baskerville/vim-sxhkdrc'
 " Track the engine.
@@ -47,6 +48,7 @@ set tabstop=2
 set expandtab
 set softtabstop=2
 set shiftwidth=2
+set sw=2
 
 set number
 set relativenumber
@@ -66,11 +68,8 @@ map <Space> :
 let g:indentLine_setConceal = 1
 let g:indentLine_color_term = 239
 " let g:indentLine_bgcolor_term = 202
+set foldmethod=indent
 
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
 
 "====[ Make the 81st column stand out ]====================
 
@@ -382,7 +381,7 @@ let g:quicktex_tex = {
 \'Section: Other Commands' : 'COMMENT',
     \'pack' : "\\usepackage{<+++>}\<CR><++>",
     \'packs' : "\\usepackage[<+++>]{<++>}\<CR><++>",
-    \'ii'  : "\\item <+++>\<CR><++>",
+    \'ii'  : "\\item <+++>",
     \'itm' : "\\begin{itemize}\<CR>\\item <+++>\<CR>\\end{itemize}\<CR><++>",
     \'enum' : "\\begin{enumerate}\<CR>\\item <+++>\<CR>\\end{enumerate}",
     \'sec' : "\\section{<+++>}\<CR><++>",
