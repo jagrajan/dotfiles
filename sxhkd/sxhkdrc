@@ -116,4 +116,4 @@ super + {Left,Down,Up,Right}
 
 # open specific applications
 super + o ; {w,t,s,a,m,j}
-	{firefox,thunderbird,zsh -i -c web-search,urxvt -e pulsemixer,spotify,zsh -i -c "urxvt -e journal"}
+	{firefox,thunderbird,zsh -i -c web-search,urxvt -e pulsemixer,zsh -i -c "music",zsh -i -c "urxvt -e journal"}
