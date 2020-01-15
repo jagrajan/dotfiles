@@ -31,5 +31,8 @@ URxvt.font: xft:DejaVuSansMonoforPowerLine:size=12
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
+! resize-font extension: https://github.com/simmel/urxvt-resize-font
+! use ctrl -, ctrl +, ctrl = to decrease, increase, and reset font
+! respectively
 URxvt.perl-ext-common: default,resize-font
 
