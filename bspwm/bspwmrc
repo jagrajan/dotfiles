@@ -4,8 +4,8 @@ sxhkd &
 compton &
 feh --bg-fill ~/Pictures/background.jpg &
 $HOME/.config/polybar/launch.sh &
-discord --disable-gpu &
-spotify --disable-gpu &
+discord &
+spotify &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 #### BSPWM configuration ####
