@@ -24,6 +24,7 @@ Plug 'baskerville/vim-sxhkdrc'
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
+Plug 'dense-analysis/ale'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -153,6 +154,11 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P⎈
+
+"---[ ALE/Linters ]---"
+let g:ale_linters = {
+\   'python': ['pyls', 'flake8'],
+\}
 
 "---[ Live latex preview ]---"
 " let g:livepreview_previewer = 'zathura'
