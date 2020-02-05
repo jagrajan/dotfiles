@@ -25,6 +25,7 @@ Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
 Plug 'dense-analysis/ale'
+Plug 'Shougo/echodoc.vim'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -137,14 +138,12 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir = "$HOME/snippets"
 
 
-let g:deoplete#enable_at_startup = 1
-
-
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
 "---[ Deoplete config ]---"
 let g:deoplete#enable_at_startup = 1
+set completeopt-=preview
 
 "---[ Copy/paste clipboard ]---"
 vnoremap  <leader>y  "+y
@@ -159,6 +158,19 @@ vnoremap <leader>P "+P⎈
 let g:ale_linters = {
 \   'python': ['pyls', 'flake8'],
 \}
+let g:ale_fixers = {
+\   'python': [
+\       'autopep8',
+\   ],
+\}
+nnoremap <Leader>af :ALEFix<cr>
+
+" Or, you could use neovim's floating text feature.
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'floating'
+" To use a custom highlight for the float window,
+" change Pmenu to your highlight group
+highlight link EchoDocFloat Pmenu
 
 "---[ Live latex preview ]---"
 " let g:livepreview_previewer = 'zathura'
