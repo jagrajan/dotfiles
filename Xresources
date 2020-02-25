@@ -26,7 +26,7 @@ URxvt.skipBuiltinGlyphs: true
 URxvt.saveLines: 2000
 URxvt.scrollBar: false
 URxvt.internalBorder: 10
-URxvt.font: xft:DejaVuSansMonoforPowerLine:size=12
+URxvt.font: xft:MesloLGMDZ Nerd Font Mono:size=12
 
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
