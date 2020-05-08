@@ -6,18 +6,22 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'yggdroot/indentline'
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'wellle/targets.vim'
 Plug 'mileszs/ack.vim'
 Plug 'mhinz/vim-janah'
 Plug 'machakann/vim-highlightedyank'
+Plug 'itchyny/lightline.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'meain/vim-automkdir'
 Plug 'tpope/vim-eunuch'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'digitaltoad/vim-pug'
 Plug 'baskerville/vim-sxhkdrc'
 " Track the engine.
@@ -26,9 +30,15 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'dense-analysis/ale'
 Plug 'Shougo/echodoc.vim'
+Plug 'vimwiki/vimwiki'
+
 
 Plug 'brennier/quicktex'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"---[ Ranger support ]---"
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
 " Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
@@ -45,8 +55,8 @@ set softtabstop=2
 set shiftwidth=2
 set sw=2
 
-set number
-set relativenumber
+" set number
+" set relativenumber
 
 " Stay in visual mode when indenting. You will never have to run gv after
 " performing an indentation.
@@ -168,6 +178,21 @@ highlight link EchoDocFloat Pmenu
 " let g:vimtex_latexmk_options = '-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode'
 let g:vimtex_view_method = 'zathura'
 
+"---[ Vim windows ]---"
+set splitbelow splitright
+" Make adjusing split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+
+" Change 2 split windows from vert to horiz or horiz to vert
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
+
+" Removes pipes | that act as seperators on splits
+set fillchars+=vert:\ 
+
 "---[ coc.nvim config ]---"
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -265,7 +290,7 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <TAB> <Plug>(coc-range-select)
+" nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
@@ -567,4 +592,11 @@ let g:quicktex_tex = {
 
 " }}}
 
+let g:lightline = {
+  \ 'colorscheme': 'seoul256',
+  \ }
+
+set nocompatible
+filetype plugin on
+syntax on
 colorscheme janah
