@@ -1,0 +1,50 @@
+set surround
+
+
+set relativenumber
+set number
+let mapleader = ","
+
+""" Config ------------------------------------------------
+map <leader>ce :edit ~/.ideavimrc<CR>
+map <leader>cs :actionlist<space>
+
+""" Navigation --------------------------------------------
+map <leader>fa :action GotoAction<CR>
+map <leader>fe :action SearchEverywhere<CR>
+map <leader>ff :action GotoFile<CR>
+map <leader>fn :action ShowNavBar<CR>
+map <leader>fr :action RecentFiles<CR>
+map <leader>fs :action GotoSymbol<CR>
+map <leader>fu :action FindUsages<CR>
+
+""" Debug -------------------------------------------------
+map <leader>db :action ToggleLineBreakpoint<CR>
+map <leader>dp :action GotoPreviousError<CR>
+map <leader>dn :action GotoNextError<CR>
+
+""" Run ---------------------------------------------------
+map <leader>rw :action ActivateRunToolWindow<CR>
+map <leader>rc :action ChooseRunConfiguration <CR>
+
+""" Git ---------------------------------------------------
+map <leader>ga :action Annotate<CR>
+map <leader>gb :action Git.Branches<CR>
+map <leader>gg :action Vcs.Show.Local.Changes<CR>
+map <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
+map <leader>gl :action Vcs.Show.Log<CR>
+map <leader>go :action Github.Open.In.Browser<CR>
+map <leader>gu :action Vcs.UpdateProject<CR>
+
+""" Splits ------------------------------------------------
+map <leader>wh :action SplitHorizontally<CR>
+map <leader>wv :action SplitVertically<CR>
+
+""" Editing -----------------------------------------------
+map <leader>eh :action MoveElementLeft<CR>
+map <leader>ei :action ShowIntentionActions<CR>
+map <leader>el :action MoveElementRight<CR>
+map <leader>er :action ReformatCode<CR>
+
+""" Open --------------------------------------------------
+map <leader>ot :action ActivateTerminalToolWindow<CR>
