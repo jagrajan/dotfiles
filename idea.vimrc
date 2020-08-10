@@ -1,9 +1,10 @@
 set surround
-
+set commentary
 
 set relativenumber
 set number
 let mapleader = ","
+map <Space> :
 
 """ Config ------------------------------------------------
 map <leader>ce :edit ~/.ideavimrc<CR>
