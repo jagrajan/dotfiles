@@ -15,6 +15,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -171,7 +172,7 @@ let g:ale_fixers = {
 \   ],
 \   'typescript': [
 \       'prettier',
-\       'tslint',
+\       'eslint',
 \       'xo',
 \   ],
 \}

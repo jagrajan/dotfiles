@@ -34,9 +34,9 @@ alias c="clear"
 alias rl="source ~/.zshrc"
 alias bl="xbacklight -set"
 export VISUAL=nvim
-export EDITOR=nvim
+export EDITOR='urxvt -i -e nvim'
 
-export FZF_DEFAULT_COMMAND='fd'
+export FZF_DEFAULT_COMMAND='fd -L'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 if [ -d "$HOME/bin" ] ; then
