@@ -25,16 +25,20 @@ map <leader>dp :action GotoPreviousError<CR>
 map <leader>dn :action GotoNextError<CR>
 
 """ Run ---------------------------------------------------
-map <leader>rw :action ActivateRunToolWindow<CR>
 map <leader>rc :action ChooseRunConfiguration <CR>
 
 """ Git ---------------------------------------------------
 map <leader>ga :action Annotate<CR>
 map <leader>gb :action Git.Branches<CR>
+map <leader>gc :action ChangesView.ToggleCommitUi<CR>
 map <leader>gg :action Vcs.Show.Local.Changes<CR>
 map <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
 map <leader>gl :action Vcs.Show.Log<CR>
+map <leader>gm :action Github.Create.Pull.Request<CR>
 map <leader>go :action Github.Open.In.Browser<CR>
+map <leader>gp :action Vcs.Push<CR>
+map <leader>gr :action Github.View.Pull.Request<CR>
+map <leader>gs :action ChangesView.Shelve<CR>
 map <leader>gu :action Vcs.UpdateProject<CR>
 
 """ Splits ------------------------------------------------
@@ -48,4 +52,6 @@ map <leader>el :action MoveElementRight<CR>
 map <leader>er :action ReformatCode<CR>
 
 """ Open --------------------------------------------------
+map <leader>od :action ActivateDebugToolWindow<CR>
+map <leader>od :action ActivateRunToolWindow<CR>
 map <leader>ot :action ActivateTerminalToolWindow<CR>
