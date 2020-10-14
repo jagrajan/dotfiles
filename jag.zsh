@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+alias python="/usr/local/bin/python3"
+
 source $HOME/dotfiles/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -47,3 +49,14 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/jag/.sdkman"
+[[ -s "/Users/jag/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jag/.sdkman/bin/sdkman-init.sh"
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
