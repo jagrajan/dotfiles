@@ -4,9 +4,7 @@ DF_ROOT="$HOME/dotfiles"
 alias rl='source $HOME/.zshrc'
 
 # Check for any environemnt specific variables
-if [[ -d "$HOME/.env.zsh" ]]; then
-  source $HOME/.env.zsh
-fi
+[[ ! -f "$HOME/.env.zsh" ]] || source $HOME/.env.zsh
 
 # Prefer python3 as default
 if [[ -d "/usr/local/bin/python3" ]]; then
@@ -57,20 +55,23 @@ alias bl="xbacklight -set"
 export VISUAL=nvim
 export EDITOR='urxvt -i -e nvim'
 
+alias ec="$VISUAL ~/.zshrc"
+alias ea="$VISUAL ~/.aliases.zsh"
+
 export FZF_DEFAULT_COMMAND='fd -L'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Prompt w/ git info
 setopt prompt_subst
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' stagedstr 'M' 
-zstyle ':vcs_info:*' unstagedstr 'M' 
+zstyle ':vcs_info:*' stagedstr 'M'
+zstyle ':vcs_info:*' unstagedstr 'M'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' actionformats '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats \
   '%F{5}[%F{2}%b%F{5}] %F{2}%c%F{3}%u%f'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-zstyle ':vcs_info:*' enable git 
+zstyle ':vcs_info:*' enable git
 +vi-git-untracked() {
   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
   [[ $(git ls-files --other --directory --exclude-standard | sed q | wc -l | tr -d ' ') == 1 ]] ; then
@@ -83,6 +84,8 @@ PROMPT='%F{167}[%F{183}%n%F{167}] %F{187}%3~ ${vcs_info_msg_0_} %f> '
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
+
+[[ ! -f "$HOME/.aliases.zsh" ]] || source $HOME/.aliases.zsh
 
 export NVM_DIR=~/.nvm
 
