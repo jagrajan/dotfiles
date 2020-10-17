@@ -7,7 +7,7 @@ alias rl='source $HOME/.zshrc'
 [[ ! -f "$HOME/.env.zsh" ]] || source $HOME/.env.zsh
 
 # Prefer python3 as default
-if [[ -d "/usr/local/bin/python3" ]]; then
+if [[ -f "/usr/local/bin/python3" ]]; then
   alias python="/usr/local/bin/python3"
 fi
 
