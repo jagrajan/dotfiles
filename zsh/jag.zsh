@@ -1,5 +1,4 @@
-DF_ROOT="$HOME/dotfiles"
-
+DF_ROOT="$HOME/dotfiles-new"
 
 alias rl='source $HOME/.zshrc'
 
@@ -90,7 +89,7 @@ fi
 export NVM_DIR=~/.nvm
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  source $(brew --prefix nvm)/nvm.sh
+  # source /usr/local/opt/nvm/nvm.sh
 fi
 
 # Load sdkman
