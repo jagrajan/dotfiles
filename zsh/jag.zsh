@@ -1,4 +1,4 @@
-DF_ROOT="$HOME/dotfiles-new"
+DF_ROOT="$HOME/dotfiles"
 
 alias rl='source $HOME/.zshrc'
 
