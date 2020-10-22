@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Plugins with no config
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-projectionist'
@@ -17,6 +18,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'tpope/vim-commentary'
 Plug 'joshdick/onedark.vim'
+Plug 'AGhost-7/critiq.vim'
 
 " Plugins with config
 " for f in split(glob('~/.config/nvim/plugins.d/*.vim'), "\n")
