@@ -76,13 +76,6 @@ nnoremap <leader>vp :PlugInstall<cr>
 
 nnoremap <leader>cw :set wrap!<cr>
 
-nmap <leader>ga :Gblame<cr>
-nmap <leader>go :Gbrowse<cr>
-xmap <leader>go :Gbrowse<cr>
-nnoremap <Leader>gg :Gstatus<cr> <C-W><S-T><cr>
-nmap <leader>gj <Plug>(GitGutterNextHunk)
-nmap <leader>gk <Plug>(GitGutterPrevHunk)
-
 nmap <leader>qd :DB g:dev<space>
 xmap <leader>qd :DB g:dev<cr>
 
