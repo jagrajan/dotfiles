@@ -1,7 +1,10 @@
 " Commonly used enough that they deserve a mapping
 nnoremap gq :q<cr>
 nnoremap gw :w<cr>
-nnoremap gn :noh<cr>
+nnoremap <silent> gn :noh<cr>
+
+" I hardly use Q normally, and gQ does the same thing has Q anyways.
+nnoremap <silent> Q :tabclose<cr>
 
 " Navigating can be annoying with lines that wrap
 nnoremap j gj
