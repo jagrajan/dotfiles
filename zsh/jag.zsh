@@ -48,14 +48,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Tell Antigen that you're done.
 antigen apply
 
-alias vi="nvim"
-alias copy-image="xclip -selection clipboard -t image/png -i"
 alias bl="xbacklight -set"
 export VISUAL=nvim
 export EDITOR='urxvt -i -e nvim'
-
-alias ec="$VISUAL ~/.zshrc"
-alias ea="$VISUAL ~/.aliases.zsh"
 
 export FZF_DEFAULT_COMMAND='fd -L'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -84,6 +79,7 @@ if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
 
+[[ ! -f "$DF_ROOT/zsh/aliases.zsh" ]] || source $DF_ROOT/zsh/aliases.zsh
 [[ ! -f "$HOME/.aliases.zsh" ]] || source $HOME/.aliases.zsh
 
 export NVM_DIR=~/.nvm
