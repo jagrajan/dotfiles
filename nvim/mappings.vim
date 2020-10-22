@@ -6,6 +6,8 @@ nnoremap gn :noh<cr>
 " Navigating can be annoying with lines that wrap
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " Snippets
 nnoremap <Leader>ue :UltiSnipsEdit<cr>
