@@ -52,9 +52,6 @@ nnoremap <c-h> <c-w><c-h>
 
 set splitbelow splitright
 
-" Move current window to new tab
-nnoremap <c-w>t <C-W><S-t><cr>
-
 " Duplicate current buffer in new window
 nnoremap <c-w>d :tab split<cr>
 
