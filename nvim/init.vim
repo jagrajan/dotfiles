@@ -63,7 +63,7 @@ noremap <silent> <up> :resize +3<cr>
 noremap <silent> <down> :resize -3<cr>
 
 " Removes pipes | that act as seperators on splits
-set fillchars+=vert:\ 
+set fillchars+=vert:\ | "don't lint
 
 "---[ Vim config commands ]---"
 nnoremap <leader>ve :tabedit $MYVIMRC<cr>:lcd %:p:h<cr>
