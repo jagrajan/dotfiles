@@ -94,6 +94,8 @@ inoremap <expr> <cr>    pumvisible() ? "\<Plug>(completion_confirm_completion)" 
 
 :source $HOME/.config/nvim/mappings.vim
 
+:source $HOME/.config/nvim/statusline.vim
+
 for f in glob('~/.config/nvim/autocmd/*.vim', 0 ,1)
     exe 'source' f
 endfor
