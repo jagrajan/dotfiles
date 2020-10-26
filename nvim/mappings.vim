@@ -3,8 +3,8 @@ nnoremap gq :q<cr>
 nnoremap gw :w<cr>
 nnoremap <silent> gn :noh<cr>
 
-" I hardly use Q normally, and gQ does the same thing has Q anyways.
-nnoremap <silent> Q :tabclose<cr>
+" Close the current tab if its not the only tab
+nnoremap <silent> <c-w>q :tabclose<cr>
 
 " Navigating can be annoying with lines that wrap
 nnoremap j gj
