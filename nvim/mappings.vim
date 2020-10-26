@@ -29,6 +29,9 @@ nnoremap <silent> <Leader>gc :Git commit<cr>
 " Opens a column with latest commit for line
 nnoremap <silent> <leader>ga :Gblame<cr>
 
+" Open a diff vertical split, use do/dp to stage/unstage
+nnoremap <silent> <leader>gv :Gvdiffsplit<cr>
+
 " Refresh git gutter
 nnoremap <silent> <leader>hr :GitGutter<cr>
 
