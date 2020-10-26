@@ -17,6 +17,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'tpope/vim-commentary'
+Plug 'justinmk/vim-dirvish'
 Plug 'joshdick/onedark.vim'
 Plug 'AGhost-7/critiq.vim'
 
