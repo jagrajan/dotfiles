@@ -76,11 +76,6 @@ nnoremap <leader>cw :set wrap!<cr>
 nmap <leader>qd :DB g:dev<space>
 xmap <leader>qd :DB g:dev<cr>
 
-"---[ Moving around/navigation ]---"
-nnoremap <leader>ff :Files<cr>
-nnoremap <leader>fr :History<cr>
-nnoremap <leader>fe :Rg<space>
-
 let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_enable_fuzzy_match = 1
 let g:diagnostic_enable_virtual_text = 1
