@@ -23,6 +23,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-test/vim-test'
 Plug 'benmills/vimux'
+Plug 'n0v1c3/vira', { 'do': './install.sh' }
 Plug 'AGhost-7/critiq.vim'
 
 " Plugins with config

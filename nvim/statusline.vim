@@ -5,6 +5,7 @@ endfunction
 set statusline=%m%t
 set statusline+=\ %y
 set statusline+=\ %{FugitiveStatusline()}
+set statusline+=\ %{ViraGetActiveIssue()}
 set statusline+=%=
 set statusline+=%{GitStatus()}
 set statusline+=\ \ %l[%c]
