@@ -3,6 +3,9 @@ nnoremap gq :q<cr>
 nnoremap gw :w<cr>
 nnoremap <silent> gn :noh<cr>
 
+inoremap <c-a> <esc>I
+inoremap <c-e> <esc>A
+
 " Close the current tab if its not the only tab
 nnoremap <silent> <c-w>q :tabclose<cr>
 
