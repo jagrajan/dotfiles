@@ -18,8 +18,8 @@ nnoremap <Leader>ua :UltiSnipsEdit all<cr>
 
 " Git
 " Open file/lines on github
-nnoremap <silent> <leader>go :Gbrowse<cr>
-xnoremap <silent> <leader>go :Gbrowse<cr>
+nnoremap <silent> <leader>go :Gbrowse!<cr>
+xnoremap <silent> <leader>go :Gbrowse!<cr>
 
 " Open git status in a new tab
 nnoremap <silent> <Leader>gg :Git<cr><c-w><s-t><cr>
