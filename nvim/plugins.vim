@@ -21,6 +21,7 @@ Plug 'nvim-lua/diagnostic-nvim'
 Plug 'tpope/vim-commentary'
 Plug 'justinmk/vim-dirvish'
 Plug 'joshdick/onedark.vim'
+Plug 'vim-test/vim-test'
 Plug 'AGhost-7/critiq.vim'
 
 " Plugins with config
