@@ -57,6 +57,12 @@ nnoremap <c-w>d :tab split<cr>
 
 nnoremap <c-w>m :Tabmerge
 
+" Line text objects
+xnoremap il g_o^
+onoremap il :normal vil<CR>
+xnoremap al $o0
+onoremap al :normal val<CR>
+
 noremap <silent> <left> :vertical resize +3<cr>
 noremap <silent> <right> :vertical resize -3<cr>
 noremap <silent> <up> :resize +3<cr>
