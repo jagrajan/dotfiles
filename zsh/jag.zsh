@@ -69,8 +69,8 @@ zstyle ':vcs_info:*' enable git
 +vi-git-untracked() {
   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
   [[ $(git ls-files --other --directory --exclude-standard | sed q | wc -l | tr -d ' ') == 1 ]] ; then
-  hook_com[unstaged]+='%F{1}??%f'
-fi
+    hook_com[unstaged]+='%F{1}??%f'
+  fi
 }
 precmd () { vcs_info }
 PROMPT='%F{99}%3~ ${vcs_info_msg_0_} %f> '
