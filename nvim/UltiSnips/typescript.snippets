@@ -9,3 +9,17 @@ async function $1($2)$3 {
 	$5
 }
 endsnippet
+
+snippet "(\w+).if" "Postfix IF" r
+if (`!p snip.rv = match.group(1)`) {
+	$1
+}
+endsnippet
+
+snippet "(\w+).log" "Postfix log" r
+console.log({ `!p snip.rv = match.group(1) ` });
+endsnippet
+
+snippet "^(\s*)(.*);?.co" "Postfix const" r
+`!p snip.rv = match.group(1)`const $1 = `!p snip.rv = match.group(2) `;$0
+endsnippet
