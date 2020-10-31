@@ -14,7 +14,8 @@ set foldmethod=indent
 let g:dev = "postgresql://fhirbase@localhost:5433/fhirbase"
 
 "---[ General config ]---"
-map ; :
+nnoremap ; :
+xnoremap ; :
 let mapleader=" "
 let maplocalleader=","
 
