@@ -20,7 +20,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'tpope/vim-commentary'
 Plug 'justinmk/vim-dirvish'
-Plug 'joshdick/onedark.vim'
+Plug 'glepnir/zephyr-nvim'
 Plug 'vim-test/vim-test'
 Plug 'benmills/vimux'
 Plug 'n0v1c3/vira', { 'do': './install.sh' }
