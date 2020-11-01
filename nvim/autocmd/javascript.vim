@@ -11,5 +11,6 @@ endfunction
 
 " Set the working directory to the first ancestor with a package.json
 augroup jest_working_directory
+    autocmd!
     autocmd BufNewFile,BufRead,VimEnter,WinEnter,BufWinEnter *.test.ts,*.test.tsx let test#project_root = GetTestRootMonorepo()
 augroup END
