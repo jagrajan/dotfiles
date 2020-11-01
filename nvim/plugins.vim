@@ -24,6 +24,8 @@ Plug 'justinmk/vim-dirvish'
 Plug 'glepnir/zephyr-nvim'
 Plug 'vim-test/vim-test'
 Plug 'benmills/vimux'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 Plug 'n0v1c3/vira', { 'do': './install.sh' }
 Plug 'AGhost-7/critiq.vim'
 
