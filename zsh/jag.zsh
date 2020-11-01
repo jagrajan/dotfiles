@@ -37,6 +37,7 @@ antigen bundle colored-man-pages
 antigen bundle fzf
 antigen bundle command-not-found
 antigen bundle yarn
+antigen bundle terraform
 
 if [[ -f /etc/arch-release ]]; then
   antigen bundle archlinux
