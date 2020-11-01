@@ -53,7 +53,7 @@ nnoremap <c-h> <c-w><c-h>
 
 set splitbelow splitright
 
-" Duplicate current buffer in new window
+" Duplicate current buffer in new tab
 nnoremap <c-w>d :tab split<cr>
 
 nnoremap <c-w>m :Tabmerge
