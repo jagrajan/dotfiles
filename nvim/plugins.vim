@@ -27,8 +27,11 @@ Plug 'benmills/vimux'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'n0v1c3/vira', { 'do': './install.sh' }
-Plug 'AGhost-7/critiq.vim'
 
+
+if exists($GH_USER)
+    Plug 'AGhost-7/critiq.vim'
+endif
 " Plugins with config
 " for f in split(glob('~/.config/nvim/plugins.d/*.vim'), "\n")
 for f in glob('~/.config/nvim/plugins.d/*.vim', 0 ,1)
