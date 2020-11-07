@@ -80,8 +80,8 @@ nnoremap <leader>vp :PlugInstall<cr>
 
 nnoremap <leader>cw :set wrap!<cr>
 
-nmap <leader>qd :DB g:dev<space>
-xmap <leader>qd :DB g:dev<cr>
+nnoremap <leader>qd :DB g:dev<space>
+xnoremap <leader>qd :DB g:dev<cr>
 
 let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_enable_fuzzy_match = 1
