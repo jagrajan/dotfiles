@@ -25,7 +25,7 @@ if [[ ! -f $DF_ROOT/antigen.zsh ]]; then
 fi
 
 # ls automatically when changing directories
-cd() { builtin cd "$@" && ls --color=tty; }
+cd() { builtin cd "$@" && ls -G }
 
 mkd() { mkdir -p $1 && cd $1 }
 
