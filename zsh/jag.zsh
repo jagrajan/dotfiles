@@ -27,6 +27,8 @@ fi
 # ls automatically when changing directories
 cd() { builtin cd "$@" && ls --color=tty; }
 
+mkd() { mkdir -p $1 && cd $1 }
+
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
