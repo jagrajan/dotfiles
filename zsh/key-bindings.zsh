@@ -15,3 +15,12 @@ open-workspaces() {
 }
 zle     -N   open-workspaces
 bindkey '^O' open-workspaces
+
+# <c-j>: open today's journal
+open-journal-today() {
+  LBUFFER="vi $JOURNALS/journal-$(date '+%Y-%m-%d').md"
+  zle accept-line
+}
+
+zle     -N   open-journal-today
+bindkey '^J' open-journal-today

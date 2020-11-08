@@ -1,5 +1,6 @@
 export DF_ROOT="$HOME/dotfiles"
 export WORKSPACES="$HOME/workspaces"
+export JOURNALS="$HOME/workspaces/journals"
 
 alias rl='source $HOME/.zshrc'
 
