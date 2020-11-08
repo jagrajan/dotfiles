@@ -52,6 +52,9 @@ nnoremap <silent> <leader>hr :GitGutter<cr>
 " I don't always like seeing highlights, but it's useful sometimes
 nnoremap <silent> <leader>hh :GitGutterLineHighlightsToggle<cr>
 
+" Reset current hunk
+nnoremap <silent> <leader>hu ::GitGutterUndoHunk<cr>
+
 " Jumping between hunks
 nnoremap <silent> [c :GitGutterPrevHunk<cr>
 nnoremap <silent> ]c :GitGutterNextHunk<cr>
