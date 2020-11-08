@@ -7,3 +7,5 @@ alias nv="cd ~/.config/nvim" # open neovim config folder
 alias tf="terraform"
 alias dot="cd $DF_ROOT"
 alias dn="cd $HOME/Downloads"
+alias ws="cd ~/workspaces"
+alias k="cd ~/workspaces/knowledge-base"
