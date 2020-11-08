@@ -23,7 +23,7 @@ if [[ ! -f $DF_ROOT/antigen.zsh ]]; then
 fi
 
 # ls automatically when changing directories
-cd() { builtin cd "$@" && ls; }
+cd() { builtin cd "$@" && ls --color=tty; }
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
