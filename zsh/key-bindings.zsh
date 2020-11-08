@@ -7,3 +7,11 @@ fzf-open-vi() {
 }
 zle     -N   fzf-open-vi
 bindkey '^V' fzf-open-vi
+
+# <c-o>: open workspaces
+open-workspaces() {
+  LBUFFER="cd $WORKSPACES"
+  zle accept-line
+}
+zle     -N   open-workspaces
+bindkey '^O' open-workspaces
