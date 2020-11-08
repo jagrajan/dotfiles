@@ -84,6 +84,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 [[ ! -f "$DF_ROOT/zsh/aliases.zsh" ]] || source $DF_ROOT/zsh/aliases.zsh
+[[ ! -f "$DF_ROOT/zsh/key-bindings.zsh" ]] || source $DF_ROOT/zsh/key-bindings.zsh
 [[ ! -f "$HOME/.aliases.zsh" ]] || source $HOME/.aliases.zsh
 
 export NVM_DIR=~/.nvm
