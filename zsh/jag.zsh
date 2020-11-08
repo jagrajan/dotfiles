@@ -22,6 +22,9 @@ if [[ ! -f $DF_ROOT/antigen.zsh ]]; then
   curl -L git.io/antigen > $DF_ROOT/antigen.zsh
 fi
 
+# ls automatically when changing directories
+cd() { builtin cd "$@" && ls; }
+
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
