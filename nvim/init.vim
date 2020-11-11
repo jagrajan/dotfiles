@@ -91,7 +91,7 @@ let g:diagnostic_enable_virtual_text = 1
 " let g:completion_confirm_key = ""
 let g:completion_enable_auto_popup = 0
 "map <c-p> to manually trigger completion
-imap <silent> <c-p> <Plug>(completion_trigger)
+imap <expr> <c-p> pumvisible() ? "<c-p>" : "\<Plug>(completion_trigger)"
 inoremap <expr> <cr>    pumvisible() ? "\<Plug>(completion_confirm_completion)" : "\<cr>"
 
 :source $HOME/.config/nvim/mappings.vim
