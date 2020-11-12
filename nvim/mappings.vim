@@ -1,26 +1,8 @@
-" Commonly used enough that they deserve a mapping
-nnoremap gq :q<cr>
-nnoremap gw :w<cr>
-nnoremap <silent> gn :noh<cr>
-
 inoremap <c-a> <esc>I
 inoremap <c-e> <esc>A
 
-nnoremap f /
-nnoremap F ?
-
-cnoremap <expr> <c-n> getcmdtype() =~ '[\/?]' ? "<c-g>" : "<c-n>"
-cnoremap <expr> <c-p> getcmdtype() =~ '[\/?]' ? "<c-t>" : "<c-p>"
-cnoremap <expr> <c-j> getcmdtype() =~ '[\/?]' ? "<cr>" : "<cr>"
-
 " Close the current tab if its not the only tab
 nnoremap <silent> <c-w>q :tabclose<cr>
-
-" Navigating can be annoying with lines that wrap
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
 
 " Snippets
 nnoremap <Leader>ue :UltiSnipsEdit<cr>

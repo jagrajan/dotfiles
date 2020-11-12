@@ -46,11 +46,6 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P⎈
 
 "---[ Vim windows ]---"
-nnoremap <c-j> <c-w><c-j>
-nnoremap <c-k> <c-w><c-k>
-nnoremap <c-l> <c-w><c-l>
-nnoremap <c-h> <c-w><c-h>
-
 set splitbelow splitright
 
 " Duplicate current buffer in new tab
@@ -83,17 +78,11 @@ nnoremap <leader>cw :set wrap!<cr>
 nnoremap <leader>qd :DB g:dev<space>
 xnoremap <leader>qd :DB g:dev<cr>
 
-let g:completion_enable_snippet = 'UltiSnips'
-let g:completion_enable_fuzzy_match = 1
-let g:diagnostic_enable_virtual_text = 1
-
-" fix conflict between completion-nvim and autopairs
-" let g:completion_confirm_key = ""
-let g:completion_enable_auto_popup = 0
 "map <c-p> to manually trigger completion
 imap <expr> <c-p> pumvisible() ? "<c-p>" : "\<Plug>(completion_trigger)"
 inoremap <expr> <cr>    pumvisible() ? "\<Plug>(completion_confirm_completion)" : "\<cr>"
 
+lua require 'jag/init'
 :source $HOME/.config/nvim/mappings.vim
 
 :source $HOME/.config/nvim/statusline.vim
