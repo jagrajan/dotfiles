@@ -1,6 +1,10 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Plugins with no config
+Plug 'lifepillar/pgsql.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'yggdroot/indentline'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'

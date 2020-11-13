@@ -23,19 +23,6 @@ let maplocalleader=","
 " the issue so far.
 syntax sync fromstart
 
-" Stay in visual mode when indenting. You will never have to run gv after
-" performing an indentation.
-vnoremap < <gv
-vnoremap > >gv
-
-" Make Y yank everything from the cursor to the end of the line. This makes Y
-" act more like C or D because by default, Y yanks the current line (i.e. the
-" same as yy).
-noremap Y y$
-
-" Dont't replace the register when pasting in visual mode
-xnoremap p pgvy
-
 "---[ Copy/paste clipboard ]---"
 vnoremap <leader>y "+y
 nnoremap <leader>Y "+yg_
@@ -53,11 +40,6 @@ nnoremap <c-w>d :tab split<cr>
 
 nnoremap <c-w>m :Tabmerge
 
-" Line text objects
-xnoremap il g_o^
-onoremap il :normal vil<CR>
-xnoremap al $o0
-onoremap al :normal val<CR>
 
 noremap <silent> <left> :vertical resize +3<cr>
 noremap <silent> <right> :vertical resize -3<cr>
@@ -68,10 +50,6 @@ noremap <silent> <down> :resize -3<cr>
 set fillchars+=vert:\ | "don't lint
 
 "---[ Vim config commands ]---"
-nnoremap <leader>ve :tabedit $MYVIMRC<cr>:lcd %:p:h<cr>
-nnoremap <leader>vo :tabedit $HOME/.config/nvim/init-old.vim<cr>
-nnoremap <leader>vr :so $MYVIMRC<cr>
-nnoremap <leader>vp :PlugInstall<cr>
 
 nnoremap <leader>cw :set wrap!<cr>
 
