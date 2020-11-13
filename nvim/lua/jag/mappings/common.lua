@@ -63,25 +63,35 @@ b('i', {'expr'}, '<c-p>', 'pumvisible() ? "<c-p>" : "<Plug>(completion_trigger)"
 b('i', {'expr'}, '<cr>',  'pumvisible() ? "<Plug>(completion_confirm_completion)" : "<cr>"')
 
 leader_mappings = {
+  ['n <c-w>q'] = 'tabclose',
+  ['n ff'] = 'Files', -- find files
+  ['n fa'] = 'Commands', -- find action
+  ['n fr'] = 'History', -- find recent
+  ['n fe'] = 'Rg', -- find everywhere
+  ['n fb'] = 'Buffers', -- find buffers
   ['n gO'] = 'GBrowse!',
   ['x go'] = 'GBrowse!',
   ['n gg'] = 'Git<cr><c-w><s-t>',
   ['n gc'] = 'Git commit',
-  ['n ga'] = 'Git_blame',
+  ['n ga'] = 'Git blame',
   ['n gh'] = 'GV!',
   ['n gv'] = 'Gvdiffsplit',
   ['n hr'] = 'GitGutter',
   ['n hh'] = 'GitGutterLineHighlightsToggle',
-  ['n hu'] = 'GitGutterUndoHunk'
+  ['n hu'] = 'GitGutterUndoHunk',
+  ['n ue'] = 'UltiSnipsEdit',
+  ['n ua'] = 'UltiSnipsEdit all'
 }
 
 for key, cmd in pairs(leader_mappings) do
   local fields = vim.split(key, ' ')
   local mode = fields[1]
   local keys = fields[2]
-  b(mode, {'silent'}, '<leader>' .. keys, '<cmd>' .. cmd .. '<cr>')
+  b(mode, {'silent'}, '<leader>' .. keys, ':' .. cmd .. '<cr>')
 end
 
-b('n', {'silent'}, '<leader>go', 'V<cmd>GBrowse!<cr>')
+b('n', {'silent'}, '<leader>go', 'V:GBrowse!<cr><esc>')
 b('n', {'silent'}, '[c', '<cmd>GitGutterPrevHunk<cr>')
 b('n', {'silent'}, ']c', '<cmd>GitGutterNextHunk<cr>')
+b('i', '<c-a>', '<esc>I')
+b('i', '<c-e>', '<esc>A')
