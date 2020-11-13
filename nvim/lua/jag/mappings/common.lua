@@ -24,7 +24,7 @@ b('nx', 'f', '/')
 b('nx', 'F', '?')
 
 b('c', {'expr'}, '<c-n>', [[getcmdtype() =~ '[\/?]' ? "<c-g>" : "<c-n>"]])
-b('c', {'expr'}, '<c-p>', [[getcmdtype() =~ '[\/?]' ? "<c-t>" : "<c-n>"]])
+b('c', {'expr'}, '<c-p>', [[getcmdtype() =~ '[\/?]' ? "<c-t>" : "<c-p>"]])
 b('c', {'expr', 'silent'}, '<c-j>', [[getcmdtype() =~ '[\/?]' ? "<cr><cmd>noh<cr>" : "<cr>"]])
 
 -- More natural j and k movements for wrapped lines
