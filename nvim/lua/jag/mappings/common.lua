@@ -76,8 +76,7 @@ leader_mappings = {
 }
 
 for key, cmd in pairs(leader_mappings) do
-  local fields = {}
-  string.gsub(key, '([^ ]+)', function(c) fields[#fields + 1] = c end)
+  local fields = vim.split(key, ' ')
   local mode = fields[1]
   local keys = fields[2]
   b(mode, {'silent'}, '<leader>' .. keys, '<cmd>' .. cmd .. '<cr>')
