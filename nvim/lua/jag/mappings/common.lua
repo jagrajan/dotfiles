@@ -20,8 +20,8 @@ b('n', '<leader>vp', '<cmd>:PlugInstall<cr>')
 --    1: Use f or F to being a search.
 --    2: Use <c-n> and <c-p> to jump to highlights.
 --    3: Press <c-j> to confirm and add to jumplist.
-b('n', 'f', '/')
-b('n', 'F', '?')
+b('nx', 'f', '/')
+b('nx', 'F', '?')
 
 b('c', {'expr'}, '<c-n>', [[getcmdtype() =~ '[\/?]' ? "<c-g>" : "<c-n>"]])
 b('c', {'expr'}, '<c-p>', [[getcmdtype() =~ '[\/?]' ? "<c-t>" : "<c-n>"]])
@@ -35,6 +35,11 @@ b('nvx', 'k', 'gk')
 for _, v in ipairs({'h', 'j', 'k', 'l'}) do
   b('n', '<c-' .. v .. '>', '<c-w>' .. v)
 end
+
+b('n', {'silent'}, '<left>',  '<cmd>vertical resize +3<cr>')
+b('n', {'silent'}, '<right>', '<cmd>vertical resize -3<cr>')
+b('n', {'silent'}, '<up>',    '<cmd>resize +3<cr>')
+b('n', {'silent'}, '<down>',  '<cmd>resize -3<cr>')
 
 -- Quickly change conceal level
 for i = 0,3 do
@@ -51,3 +56,33 @@ b('x', 'il', 'g_o^')
 b('x', 'al', '$o0')
 b('o', 'il', '<cmd>normal vil<cr>')
 b('o', 'al', '<cmd>normal val<cr>')
+
+
+-- completion.nvim
+b('i', {'expr'}, '<c-p>', 'pumvisible() ? "<c-p>" : "<Plug>(completion_trigger)"')
+b('i', {'expr'}, '<cr>',  'pumvisible() ? "<Plug>(completion_confirm_completion)" : "<cr>"')
+
+leader_mappings = {
+  ['n gO'] = 'GBrowse!',
+  ['x go'] = 'GBrowse!',
+  ['n gg'] = 'Git<cr><c-w><s-t>',
+  ['n gc'] = 'Git commit',
+  ['n ga'] = 'Git_blame',
+  ['n gh'] = 'GV!',
+  ['n gv'] = 'Gvdiffsplit',
+  ['n hr'] = 'GitGutter',
+  ['n hh'] = 'GitGutterLineHighlightsToggle',
+  ['n hu'] = 'GitGutterUndoHunk'
+}
+
+for key, cmd in pairs(leader_mappings) do
+  local fields = {}
+  string.gsub(key, '([^ ]+)', function(c) fields[#fields + 1] = c end)
+  local mode = fields[1]
+  local keys = fields[2]
+  b(mode, {'silent'}, '<leader>' .. keys, '<cmd>' .. cmd .. '<cr>')
+end
+
+b('n', {'silent'}, '<leader>go', 'V<cmd>GBrowse!<cr>')
+b('n', {'silent'}, '[c', '<cmd>GitGutterPrevHunk<cr>')
+b('n', {'silent'}, ']c', '<cmd>GitGutterNextHunk<cr>')

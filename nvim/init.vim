@@ -40,12 +40,6 @@ nnoremap <c-w>d :tab split<cr>
 
 nnoremap <c-w>m :Tabmerge
 
-
-noremap <silent> <left> :vertical resize +3<cr>
-noremap <silent> <right> :vertical resize -3<cr>
-noremap <silent> <up> :resize +3<cr>
-noremap <silent> <down> :resize -3<cr>
-
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\ | "don't lint
 
@@ -55,10 +49,6 @@ nnoremap <leader>cw :set wrap!<cr>
 
 nnoremap <leader>qd :DB g:dev<space>
 xnoremap <leader>qd :DB g:dev<cr>
-
-"map <c-p> to manually trigger completion
-imap <expr> <c-p> pumvisible() ? "<c-p>" : "\<Plug>(completion_trigger)"
-inoremap <expr> <cr>    pumvisible() ? "\<Plug>(completion_confirm_completion)" : "\<cr>"
 
 lua require 'jag/init'
 :source $HOME/.config/nvim/mappings.vim
