@@ -1,4 +1,5 @@
 local b = require 'vimp'.bind
+local nvim_create_augroups = require 'jag/util/nvim_utils'.nvim_create_augroups
 
 -- Very commonly used, deserve their own binding
 b('n', 'gq', '<cmd>q<cr>')
@@ -95,3 +96,32 @@ b('n', {'silent'}, '[c', '<cmd>GitGutterPrevHunk<cr>')
 b('n', {'silent'}, ']c', '<cmd>GitGutterNextHunk<cr>')
 b('i', '<c-a>', '<esc>I')
 b('i', '<c-e>', '<esc>A')
+
+FILETYPE_HOOKS = {
+  dirvish = function ()
+    -- Create a new file
+    b('n', {'buffer', 'override'}, 'e', '<cmd>edit %')
+    -- Create a new folder
+    b('n', {'buffer', 'override'}, 'm', '<cmd>!mkdir %')
+  end;
+  json = function ()
+    -- Format file with jq
+    b('n', {'buffer'}, '<localleader>f', '<cmd>%!jq .<cr>')
+  end
+}
+
+-- From norcalli/nvim_utils
+local function escape_keymap(key)
+	-- Prepend with a letter so it can be used as a dictionary key
+	return 'k'..key:gsub('.', string.byte)
+end
+
+local autocmds = {}
+
+for filetype, _ in pairs(FILETYPE_HOOKS) do
+  autocmds['LuaFileTypeHook_' .. escape_keymap(filetype)] = {
+		{'FileType', filetype, ('lua FILETYPE_HOOKS[%q]()'):format(filetype)}
+	}
+end
+
+nvim_create_augroups(autocmds)
