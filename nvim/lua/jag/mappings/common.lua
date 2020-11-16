@@ -4,6 +4,7 @@ local nvim_create_augroups = require 'jag/util/nvim_utils'.nvim_create_augroups
 
 -- Very commonly used, deserve their own binding
 b('n', 'gq', '<cmd>q<cr>')
+b('n', 'gQ', '<cmd>qa<cr>')
 b('n', 'gw', '<cmd>w<cr>')
 b('n', {'silent'} , 'gn', '<cmd>noh<cr>')
 
@@ -100,9 +101,9 @@ b('i', '<c-e>', '<esc>A')
 FILETYPE_HOOKS = {
   dirvish = function ()
     -- Create a new file
-    b('n', {'buffer', 'override'}, 'e', '<cmd>edit %')
+    b('n', {'buffer', 'override'}, 'e', ':edit %')
     -- Create a new folder
-    b('n', {'buffer', 'override'}, 'm', '<cmd>!mkdir %')
+    b('n', {'buffer', 'override'}, 'm', ':!mkdir %')
   end;
   json = function ()
     -- Format file with jq
