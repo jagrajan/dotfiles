@@ -38,6 +38,12 @@ for _, v in ipairs({'h', 'j', 'k', 'l'}) do
   b('n', '<c-' .. v .. '>', '<c-w>' .. v)
 end
 
+-- Quickly change tabs
+b('n', {'silent'}, '[t', '<cmd>tabprev<cr>')
+b('n', {'silent'}, ']t', '<cmd>tabnext<cr>')
+b('n', {'silent'}, '[T', '<cmd>tabfirst<cr>')
+b('n', {'silent'}, ']T', '<cmd>tablast<cr>')
+
 b('n', {'silent'}, '<left>',  '<cmd>vertical resize +3<cr>')
 b('n', {'silent'}, '<right>', '<cmd>vertical resize -3<cr>')
 b('n', {'silent'}, '<up>',    '<cmd>resize +3<cr>')
