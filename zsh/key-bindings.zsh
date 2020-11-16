@@ -24,3 +24,12 @@ open-journal-today() {
 
 zle     -N   open-journal-today
 bindkey '^J' open-journal-today
+
+# <c-g>: open fugitive
+open-fugitive() {
+  nvim +OnlyFugitive
+  zle accept-line
+}
+
+zle     -N   open-fugitive
+bindkey '^G' open-fugitive
