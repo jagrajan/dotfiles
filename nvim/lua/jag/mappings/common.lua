@@ -1,4 +1,5 @@
 local b = require 'vimp'.bind
+local br = require 'vimp'.rbind
 local nvim_create_augroups = require 'jag/util/nvim_utils'.nvim_create_augroups
 
 -- Very commonly used, deserve their own binding
@@ -58,12 +59,11 @@ b('x', 'al', '$o0')
 b('o', 'il', '<cmd>normal vil<cr>')
 b('o', 'al', '<cmd>normal val<cr>')
 
-
 -- completion.nvim
-b('i', {'expr'}, '<c-p>', 'pumvisible() ? "<c-p>" : "<Plug>(completion_trigger)"')
+br('i', {'expr'}, '<c-p>', 'pumvisible() ? "<c-p>" : "<Plug>(completion_trigger)"')
 b('i', {'expr'}, '<cr>',  'pumvisible() ? "<Plug>(completion_confirm_completion)" : "<cr>"')
 
-leader_mappings = {
+local leader_mappings = {
   ['n <c-w>q'] = 'tabclose',
   ['n ff'] = 'Files', -- find files
   ['n fa'] = 'Commands', -- find action
@@ -107,7 +107,10 @@ FILETYPE_HOOKS = {
   json = function ()
     -- Format file with jq
     b('n', {'buffer'}, '<localleader>f', '<cmd>%!jq .<cr>')
-  end
+  end;
+  terraform = function ()
+    b('n', {'buffer', 'override'}, '<localleader>f', '<cmd>!terraform fmt<cr>')
+  end;
 }
 
 -- From norcalli/nvim_utils
@@ -125,3 +128,11 @@ for filetype, _ in pairs(FILETYPE_HOOKS) do
 end
 
 nvim_create_augroups(autocmds)
+
+local scratch_mappings = {
+  j = 'json'
+}
+
+for k, ft in pairs(scratch_mappings) do
+  b('n', '<leader>s' .. k, ':tabedit<cr>:set ft=' .. ft .. '<cr>')
+end
