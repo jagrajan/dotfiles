@@ -80,6 +80,7 @@ local leader_mappings = {
   ['n gO'] = 'GBrowse!',
   ['x go'] = 'GBrowse!',
   ['n gg'] = 'Git<cr><c-w><s-t>',
+  ['n GG'] = 'Git<cr><c-w><s-t>:tabonly<cr>',
   ['n gc'] = 'Git commit',
   ['n ga'] = 'Git blame',
   ['n gh'] = 'GV!',
