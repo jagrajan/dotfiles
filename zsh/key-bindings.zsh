@@ -10,7 +10,7 @@ bindkey '^V' fzf-open-vi
 
 # <c-o>: open workspaces
 open-workspaces() {
-  LBUFFER="cd $WORKSPACES"
+  LBUFFER="cd $WORKSPACES/$(ls -1 $WORKSPACES | fzf)"
   zle accept-line
 }
 zle     -N   open-workspaces
