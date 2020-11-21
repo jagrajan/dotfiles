@@ -3,12 +3,16 @@ set commentary
 
 set relativenumber
 set number
-let mapleader = ","
-map <Space> :
+let mapleader = " "
+map ; :
+
+nnoremap gw :write<cr>
+nnoremap gq :quit<cr>
+nnoremap gQ :quitall<cr>
 
 """ Config ------------------------------------------------
-map <leader>ce :edit ~/.ideavimrc<CR>
-map <leader>cs :actionlist<space>
+map <leader>ve :edit ~/.ideavimrc<CR>
+map <leader>vs :actionlist<space>
 
 """ Navigation --------------------------------------------
 map <leader>fa :action GotoAction<CR>
@@ -17,13 +21,13 @@ map <leader>ff :action GotoFile<CR>
 map <leader>fn :action ShowNavBar<CR>
 map <leader>fr :action RecentFiles<CR>
 map <leader>fs :action GotoSymbol<CR>
-map <leader>fu :action FindUsages<CR>
+map gr :action FindUsages<CR>
 
-""" Debug -------------------------------------------------
+""" Debug --------a----------------------------------------
 map <leader>db :action ToggleLineBreakpoint<CR>
 map <leader>dc :action DebugClass<CR>
-map <leader>dp :action GotoPreviousError<CR>
-map <leader>dn :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
 
 """ Run ---------------------------------------------------
 map <leader>rm :action ChooseRunConfiguration<CR>
@@ -44,9 +48,11 @@ map <leader>gs :action ChangesView.Shelve<CR>
 map <leader>gu :action Vcs.UpdateProject<CR>
 
 """ Splits ------------------------------------------------
-map <leader>wh :action SplitHorizontally<CR>
 map <leader>wq :action CloseEditorsGroup<CR>
-map <leader>wv :action SplitVertically<CR>
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 """ Editing -----------------------------------------------
 map <leader>ee :action Javascript.Linters.EsLint.Fix<CR>
@@ -63,3 +69,4 @@ map <leader>on :action ActivatenpmToolWindow<CR>
 map <leader>op :action ActivateProjectToolWindow<CR>
 map <leader>or :action ActivateRunToolWindow<CR>
 map <leader>ot :action ActivateTerminalToolWindow<CR>
+
