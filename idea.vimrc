@@ -9,6 +9,8 @@ map ; :
 nnoremap gw :write<cr>
 nnoremap gq :quit<cr>
 nnoremap gQ :quitall<cr>
+inoremap <c-n> <down>
+inoremap <c-p> <up>
 
 """ Config ------------------------------------------------
 map <leader>ve :edit ~/.ideavimrc<CR>
@@ -46,6 +48,9 @@ map <leader>gp :action Vcs.Push<CR>
 map <leader>gr :action Github.View.Pull.Request<CR>
 map <leader>gs :action ChangesView.Shelve<CR>
 map <leader>gu :action Vcs.UpdateProject<CR>
+map <leader>hu :action Vcs.RollbackChangedLines<CR>
+nnoremap [c :action VcsShowPrevChangeMarker<cr>
+nnoremap ]c :action VcsShowNextChangeMarker<cr>
 
 """ Splits ------------------------------------------------
 map <leader>wq :action CloseEditorsGroup<CR>
