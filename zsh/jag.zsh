@@ -85,7 +85,7 @@ zstyle ':vcs_info:*' enable git
   fi
 }
 precmd () { vcs_info }
-PROMPT='%F{99}%3~ ${vcs_info_msg_0_} %f> '
+PROMPT='%F{99}%1~ ${vcs_info_msg_0_} %f> '
 
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
