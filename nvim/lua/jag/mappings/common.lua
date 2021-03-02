@@ -138,7 +138,8 @@ end
 nvim_create_augroups(autocmds)
 
 local scratch_mappings = {
-  j = 'json'
+  j = 'json',
+  s = 'sql'
 }
 
 for k, ft in pairs(scratch_mappings) do
