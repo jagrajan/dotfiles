@@ -107,3 +107,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 autoload -U +X bashcompinit && bashcompinit
 [[ -s /usr/local/bin/terraform ]] && complete -o nospace -C /usr/local/bin/terraform terraform
+
+PROMPT='%F{99}%2~ ${vcs_info_msg_0_} %f> '
