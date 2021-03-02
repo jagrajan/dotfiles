@@ -62,7 +62,7 @@ antigen apply
 
 alias bl="xbacklight -set"
 export VISUAL=nvim
-export EDITOR='urxvt -i -e nvim'
+export EDITOR=nvim
 
 export FZF_DEFAULT_COMMAND='fd -L'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
