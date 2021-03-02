@@ -75,7 +75,6 @@ local leader_mappings = {
   ['n ff'] = 'Files', -- find files
   ['n fa'] = 'Commands', -- find action
   ['n fr'] = 'History', -- find recent
-  ['n fe'] = 'Rg', -- find everywhere
   ['n fb'] = 'Buffers', -- find buffers
   ['n gO'] = 'GBrowse!',
   ['x go'] = 'GBrowse!',
@@ -100,6 +99,7 @@ for key, cmd in pairs(leader_mappings) do
 end
 
 b('n', {'silent'}, '<leader>go', 'V:GBrowse!<cr><esc>')
+b('n', '<leader>fe', ':Rg ')
 b('n', {'silent'}, '[c', '<cmd>GitGutterPrevHunk<cr>')
 b('n', {'silent'}, ']c', '<cmd>GitGutterNextHunk<cr>')
 b('i', '<c-a>', '<esc>I')
