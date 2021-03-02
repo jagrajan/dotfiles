@@ -11,6 +11,7 @@ nnoremap gq :quit<cr>
 nnoremap gQ :quitall<cr>
 inoremap <c-n> <down>
 inoremap <c-p> <up>
+xnoremap p pgvy
 
 """ Config ------------------------------------------------
 map <leader>ve :edit ~/.ideavimrc<CR>
@@ -24,6 +25,7 @@ map <leader>fn :action ShowNavBar<CR>
 map <leader>fr :action RecentFiles<CR>
 map <leader>fs :action GotoSymbol<CR>
 map gr :action FindUsages<CR>
+nnoremap - :action SelectInProjectView<CR>
 
 """ Debug --------a----------------------------------------
 map <leader>db :action ToggleLineBreakpoint<CR>
@@ -54,6 +56,7 @@ nnoremap ]c :action VcsShowNextChangeMarker<cr>
 
 """ Splits ------------------------------------------------
 map <leader>wq :action CloseEditorsGroup<CR>
+map <leader>ww :action CloseActiveTab<CR>
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -73,5 +76,5 @@ map <leader>od :action ActivateDebugToolWindow<CR>
 map <leader>on :action ActivatenpmToolWindow<CR>
 map <leader>op :action ActivateProjectToolWindow<CR>
 map <leader>or :action ActivateRunToolWindow<CR>
+map <leader>os :action FileStructurePopup<CR>
 map <leader>ot :action ActivateTerminalToolWindow<CR>
-
