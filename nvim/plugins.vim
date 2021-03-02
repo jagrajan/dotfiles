@@ -7,6 +7,7 @@ Plug 'honza/vim-snippets'
 Plug 'yggdroot/indentline'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-projectionist'
@@ -34,7 +35,8 @@ Plug 'benmills/vimux'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'n0v1c3/vira', { 'do': './install.sh' }
-
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 if exists($GH_USER)
     Plug 'AGhost-7/critiq.vim'
