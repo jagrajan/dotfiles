@@ -20,15 +20,15 @@ b('n', '<leader>vr', '<cmd>so $MYVIMRC<cr>')
 b('n', '<leader>vp', '<cmd>:PlugInstall<cr>')
 
 -- Used for quickly jumping around in a file:
---    1: Use f or F to being a search.
+--    1: Use / for case-insensitive search or ? for case-sensitive search
 --    2: Use <c-n> and <c-p> to jump to highlights.
---    3: Press <c-j> to confirm and add to jumplist.
-b('nx', 'f', '/')
-b('nx', 'F', '?')
+--    3: Press <cr> to confirm and add to jumplist.
+b('nx', '/', '/\\c')
+b('nx', '?', '/')
 
 b('c', {'expr'}, '<c-n>', [[getcmdtype() =~ '[\/?]' ? "<c-g>" : "<c-n>"]])
 b('c', {'expr'}, '<c-p>', [[getcmdtype() =~ '[\/?]' ? "<c-t>" : "<c-p>"]])
-b('c', {'expr', 'silent'}, '<c-j>', [[getcmdtype() =~ '[\/?]' ? "<cr><cmd>noh<cr>" : "<cr>"]])
+b('c', {'expr', 'silent'}, '<cr>', [[getcmdtype() =~ '[\/?]' ? "<cr><cmd>noh<cr>" : "<cr>"]])
 
 -- More natural j and k movements for wrapped lines
 b('nvx', 'j', 'gj')
