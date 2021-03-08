@@ -72,10 +72,10 @@ b('i', {'expr'}, '<cr>',  'pumvisible() ? "<Plug>(completion_confirm_completion)
 
 local leader_mappings = {
   ['n <c-w>q'] = 'tabclose',
-  ['n ff'] = 'Files', -- find files
+  ['n ff'] = 'lua require("telescope.builtin").git_files()', -- find files
   ['n fa'] = 'Commands', -- find action
   ['n fr'] = 'History', -- find recent
-  ['n fb'] = 'Buffers', -- find buffers
+  ['n fb'] = 'lua require("telescope.builtin").buffers()', -- find buffers
   ['n gO'] = 'GBrowse!',
   ['x go'] = 'GBrowse!',
   ['n gg'] = 'Git<cr><c-w><s-t>',

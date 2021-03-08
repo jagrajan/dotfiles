@@ -37,6 +37,10 @@ Plug 'plasticboy/vim-markdown'
 Plug 'n0v1c3/vira', { 'do': './install.sh' }
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 if exists($GH_USER)
     Plug 'AGhost-7/critiq.vim'
