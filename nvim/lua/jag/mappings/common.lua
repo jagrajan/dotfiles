@@ -70,6 +70,7 @@ b('o', 'al', '<cmd>normal val<cr>')
 br('i', {'expr'}, '<c-p>', 'pumvisible() ? "<c-p>" : "<Plug>(completion_trigger)"')
 b('i', {'expr'}, '<cr>',  'pumvisible() ? "<Plug>(completion_confirm_completion)" : "<cr>"')
 
+
 local leader_mappings = {
   ['n <c-w>q'] = 'tabclose',
   ['n ff'] = 'lua require("telescope.builtin").git_files()', -- find files
@@ -89,6 +90,15 @@ local leader_mappings = {
   ['n hr'] = 'GitGutter',
   ['n hh'] = 'GitGutterLineHighlightsToggle',
   ['n hu'] = 'GitGutterUndoHunk',
+  -- Copying ThePrimeAgen's config to start
+  ['n ld'] = 'lua vim.lsp.buf.definition()',
+  ['n li'] = 'lua vim.lsp.buf.implementation()',
+  ['n lsh'] = 'lua vim.lsp.buf.signature_help()',
+  ['n lrn'] = 'lua vim.lsp.buf.rename()',
+  ['n lh'] = 'lua vim.lsp.buf.hover()',
+  ['n lca'] = 'lua vim.lsp.buf.code_action()',
+  ['n lsd'] = 'lua vim.lsp.util.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()',
+  ['n lrr'] = 'lua vim.lsp.buf.references()',
   ['n ue'] = 'UltiSnipsEdit',
   ['n ua'] = 'UltiSnipsEdit all'
 }

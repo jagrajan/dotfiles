@@ -6,9 +6,6 @@ local g = vim.g
   -- I like using the built in buffer completion
   g.completion_enable_auto_popup = false
 
--- diagnostic.nvim
-  g.diagnostic_enable_virtual_text = true
-
 -- postgresql.vim
   g.sql_type_default = 'pgsql'
 
