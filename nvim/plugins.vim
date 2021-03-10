@@ -39,10 +39,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'pwntester/octo.nvim'
 
-if exists($GH_USER)
-    Plug 'AGhost-7/critiq.vim'
-endif
 " Plugins with config
 " for f in split(glob('~/.config/nvim/plugins.d/*.vim'), "\n")
 for f in glob('~/.config/nvim/plugins.d/*.vim', 0 ,1)
