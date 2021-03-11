@@ -118,6 +118,9 @@ b('n', {'silent'}, ']c', '<cmd>GitGutterNextHunk<cr>')
 b('i', '<c-a>', '<esc>I')
 b('i', '<c-e>', '<esc>A')
 
+b('n', ']d', vim.lsp.diagnostic.goto_next)
+b('n', '[d', vim.lsp.diagnostic.goto_prev)
+
 FILETYPE_HOOKS = {
   dirvish = function ()
     -- Create a new file
