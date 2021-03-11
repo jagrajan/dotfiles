@@ -92,6 +92,7 @@ local leader_mappings = {
   ['n hu'] = 'GitGutterUndoHunk',
   -- Copying ThePrimeAgen's config to start
   ['n ld'] = 'lua vim.lsp.buf.definition()',
+  ['n lf'] = 'lua vim.lsp.buf.formatting()',
   ['n li'] = 'lua vim.lsp.buf.implementation()',
   ['n lsh'] = 'lua vim.lsp.buf.signature_help()',
   ['n lrn'] = 'lua vim.lsp.buf.rename()',
