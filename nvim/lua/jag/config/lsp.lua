@@ -19,17 +19,18 @@ local eslint = {
 }
 
 nvim_lsp.efm.setup {
-  filetypes = {"javascript", "typescript"},
+  filetypes = {"javascript", "typescript", "typescriptreact"},
   root_dir = function(fname)
     return nvim_lsp.util.root_pattern("tsconfig.json")(fname) or
     nvim_lsp.util.root_pattern(".eslintrc.js", ".git")(fname);
   end,
   init_options = {documentFormatting = true},
   settings = {
-    rootMarkers = {".eslintrc.js", ".git/"},
+    rootMarkers = {"package.json", ".git/"},
     languages = {
       javascript = {eslint},
-      typescript = {eslint}
+      typescript = {eslint},
+      typescriptreact = {eslint}
     }
   }
 }
