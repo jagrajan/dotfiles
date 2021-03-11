@@ -10,6 +10,8 @@ set shiftwidth=2
 set sw=2
 set updatetime=100
 set foldmethod=indent
+set noswapfile
+set hidden
 
 let g:dev = "postgresql://fhirbase@localhost:5433/fhirbase"
 
