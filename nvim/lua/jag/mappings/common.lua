@@ -90,15 +90,15 @@ local leader_mappings = {
   ['n hr'] = 'GitGutter',
   ['n hh'] = 'GitGutterLineHighlightsToggle',
   ['n hu'] = 'GitGutterUndoHunk',
-  -- Copying ThePrimeAgen's config to start
   ['n ld'] = 'lua vim.lsp.buf.definition()',
+  ['n lpd'] = 'Lspsaga preview_definition',
   ['n lf'] = 'lua vim.lsp.buf.formatting()',
   ['n li'] = 'lua vim.lsp.buf.implementation()',
-  ['n lsh'] = 'lua vim.lsp.buf.signature_help()',
-  ['n lrn'] = 'lua vim.lsp.buf.rename()',
-  ['n lh'] = 'lua vim.lsp.buf.hover()',
-  ['n lca'] = 'lua vim.lsp.buf.code_action()',
-  ['n lsd'] = 'lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.diagnostic.show_line_diagnostics();',
+  ['n lsh'] = 'Lspsaga signature_help',
+  ['n lrn'] = 'Lspsaga rename',
+  ['n lh'] = 'Lspsaga hover_doc',
+  ['n lca'] = 'Lspsaga code_action',
+  ['n lsd'] = 'Lspsaga show_line_diagnostics',
   ['n lrr'] = 'lua vim.lsp.buf.references()',
   ['n ue'] = 'UltiSnipsEdit',
   ['n ua'] = 'UltiSnipsEdit all'
@@ -118,8 +118,10 @@ b('n', {'silent'}, ']c', '<cmd>GitGutterNextHunk<cr>')
 b('i', '<c-a>', '<esc>I')
 b('i', '<c-e>', '<esc>A')
 
-b('n', ']d', vim.lsp.diagnostic.goto_next)
-b('n', '[d', vim.lsp.diagnostic.goto_prev)
+b('n', ']d', ':Lspsaga diagnostic_jump_next<cr>')
+b('n', '[d', ':Lspsaga diagnostic_jump_prev<cr>')
+b('n', {'silent'} ,'<m-d>', ':Lspsaga open_floaterm<cr>')
+b('t', {'silent'} ,'<m-d>', '<c-\\><c-n>:Lspsaga close_floaterm<cr>')
 
 FILETYPE_HOOKS = {
   dirvish = function ()
