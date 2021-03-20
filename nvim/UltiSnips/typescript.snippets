@@ -16,6 +16,10 @@ if (`!p snip.rv = match.group(1)`) {
 }
 endsnippet
 
+snippet "cl"
+console.log({ $1 });
+endsnippet
+
 snippet "(\w+).log" "Postfix log" r
 console.log({ `!p snip.rv = match.group(1) ` });
 endsnippet
