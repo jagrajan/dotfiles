@@ -10,7 +10,7 @@ local g = vim.g
   g.sql_type_default = 'pgsql'
 
 -- UltiSnips
-  g.UltiSnipsExpandTrigger = '<c-j>'
+  g.UltiSnipsExpandTrigger = '<tab>'
   g.UltiSnipsJumpForwardTrigger = '<c-j>'
   g.UltiSnipsJumpBackwardTrigger = '<c-k>'
   g.UltiSnipsEditSplit = 'vertical'
