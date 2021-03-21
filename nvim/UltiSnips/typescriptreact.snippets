@@ -1,6 +1,6 @@
 extends typescript
 
-snippet rfc
+snippet rfc "React functional components with props"
 import React from 'react';
 
 interface $1Props {
@@ -15,4 +15,14 @@ const $1: React.FC<$1Props> = () => {
 
 export default $1;
 
+endsnippet
+
+snippet useS "useState Hook" b
+const [${1}, set`!p snip.rv=t[1].title()`] = useState(${3:"${4}"})
+endsnippet
+
+snippet useE "useEffect Hook" b
+useEffect(() => {
+	${1:${0}}
+		}${2})
 endsnippet
