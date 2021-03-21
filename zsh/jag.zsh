@@ -64,6 +64,12 @@ alias bl="xbacklight -set"
 export VISUAL=nvim
 export EDITOR=nvim
 
+if ! type "bat" > /dev/null; then
+  echo 'no bat found'
+else
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+
 export FZF_DEFAULT_COMMAND='fd -L'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
