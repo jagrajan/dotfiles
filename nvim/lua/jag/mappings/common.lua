@@ -120,8 +120,11 @@ b('i', '<c-e>', '<esc>A')
 
 b('n', ']d', ':Lspsaga diagnostic_jump_next<cr>')
 b('n', '[d', ':Lspsaga diagnostic_jump_prev<cr>')
-b('n', {'silent'} ,'<m-d>', ':Lspsaga open_floaterm<cr>')
-b('t', {'silent'} ,'<m-d>', '<c-\\><c-n>:Lspsaga close_floaterm<cr>')
+b('n', {'silent'} ,'<m-c-S>', ':FloatermNew --width=0.8 --height=0.8 rg<cr>')
+b('n', {'silent'} ,'<m-c-G>', ':FloatermNew --width=0.8 --height=0.8 lazygit<cr>')
+b('n', {'silent'} ,'<m-c-F>', ':FloatermNew --width=0.8 --height=0.8 fzf<cr>')
+b('n', {'silent'} ,'<m-c-R>', ':FloatermNew --width=0.8 --height=0.8 ranger<cr>')
+b('n', {'silent'} ,'<m-c-T>', ':FloatermNew<cr>')
 
 FILETYPE_HOOKS = {
   dirvish = function ()

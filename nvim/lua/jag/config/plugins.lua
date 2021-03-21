@@ -19,3 +19,7 @@ local g = vim.g
 -- indentLine
   g.indentLine_setConceal = 1
   g.indentLine_color_term = 239
+
+-- floaterm
+  g.floaterm_width = 0.8
+  g.floaterm_height = 0.8
