@@ -124,6 +124,7 @@ b('n', {'silent'} ,'<m-c-S>', ':FloatermNew --width=0.8 --height=0.8 rg<cr>')
 b('n', {'silent'} ,'<m-c-G>', ':FloatermNew --width=0.8 --height=0.8 lazygit<cr>')
 b('n', {'silent'} ,'<m-c-F>', ':FloatermNew --width=0.8 --height=0.8 fzf<cr>')
 b('n', {'silent'} ,'<m-c-R>', ':FloatermNew --width=0.8 --height=0.8 ranger<cr>')
+b('n', {'silent'} ,'<m-c-B>', ':FloatermNew --width=0.8 --height=0.8 broot<cr>')
 b('n', {'silent'} ,'<m-c-T>', ':FloatermNew<cr>')
 
 FILETYPE_HOOKS = {
