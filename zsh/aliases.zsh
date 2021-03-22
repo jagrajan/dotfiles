@@ -1,4 +1,8 @@
-alias vi="nvim"
+if ! type "floaterm" > /dev/null; then
+  alias vi="nvim"
+else
+  alias vi="floaterm"
+fi
 alias ec="vi ~/.zshrc" # edit config
 alias ea="vi ~/.aliases.zsh" # edit aliases (environment)
 alias eas="vi $DF_ROOT/zsh/aliases.zsh" # edit aliases (shared)
