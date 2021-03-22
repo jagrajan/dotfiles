@@ -16,11 +16,11 @@ open-workspaces() {
 zle     -N   open-workspaces
 bindkey '^O' open-workspaces
 
-# <c-g>: open fugitive
-open-fugitive() {
-  nvim +OnlyFugitive
+# <c-g>: open lazygit
+open-lazygit() {
+  lazygit
   zle accept-line
 }
 
-zle     -N   open-fugitive
-bindkey '^G' open-fugitive
+zle     -N   open-lazygit
+bindkey '^G' open-lazygit
