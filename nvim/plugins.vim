@@ -31,7 +31,6 @@ Plug 'vim-test/vim-test'
 Plug 'benmills/vimux'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'n0v1c3/vira', { 'do': './install.sh' }
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-lua/popup.nvim'
