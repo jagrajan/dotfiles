@@ -23,3 +23,4 @@ local g = vim.g
 -- floaterm
   g.floaterm_width = 0.8
   g.floaterm_height = 0.8
+  g.floaterm_opener = 'vsplit'
