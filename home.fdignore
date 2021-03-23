@@ -16,3 +16,6 @@ Desktop/Old Firefox Data
 .antigen
 .local
 .config/nvim/plugged
+opt
+.gradle
+.yarn
