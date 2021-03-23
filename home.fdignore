@@ -19,3 +19,4 @@ Desktop/Old Firefox Data
 opt
 .gradle
 .yarn
+.logs
