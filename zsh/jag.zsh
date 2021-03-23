@@ -140,3 +140,7 @@ function br {
   rm -f "$f"
   eval "$d"
 }
+
+cheat () {
+  curl cheat.sh/"$1"
+}
