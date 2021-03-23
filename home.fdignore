@@ -1,0 +1,18 @@
+Library
+Pictures
+WebstormProjects
+Dropbox
+Google Drive
+Desktop/Old Firefox Data
+.vscode
+.npm
+.nvm
+.config/yarn
+.aws
+.cache
+.tmux
+.aws-same
+.m2
+.antigen
+.local
+.config/nvim/plugged
