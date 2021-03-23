@@ -26,9 +26,9 @@ fi
 
 # ls automatically when changing directories
 if [[ -f /etc/arch-release ]]; then
-  cd() { builtin cd "$@" && ls --color=tty }
+  cd() { builtin cd "$@" && \ls --color=tty }
 else
-  cd() { builtin cd "$@" && ls -G }
+  cd() { builtin cd "$@" && \ls -G }
 fi
 
 mkd() { mkdir -p $1 && cd $1 }
