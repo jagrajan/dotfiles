@@ -125,6 +125,7 @@ b('n', {'silent'} ,'<leader>og', ':FloatermNew --width=0.8 --height=0.8 lazygit<
 b('n', {'silent'} ,'<leader>of', ':FloatermNew --width=0.8 --height=0.8 fzf<cr>')
 b('n', {'silent'} ,'<leader>or', ':FloatermNew --width=0.8 --height=0.8 ranger<cr>')
 b('n', {'silent'} ,'<leader>ob', ':FloatermNew --width=0.8 --height=0.8 broot<cr>')
+b('n', {'silent'} ,'<leader>on', ':tabe<cr>:lcd ~/workspaces/notes<cr>:Files<cr>')
 b('n', {'silent'} ,'<leader>ot', ':FloatermNew<cr>')
 
 FILETYPE_HOOKS = {
