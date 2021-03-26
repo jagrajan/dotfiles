@@ -1,9 +1,13 @@
 # <c-v>: select file with fzf and open in vim
 fzf-open-vi() {
-  LBUFFER="vi $(__fsel)"
-  local ret=$?
-  zle accept-line
-  return $ret
+  local dest=$(__fsel)
+  if [[ ! -z "$dest" ]]; then
+    LBUFFER="vi $dest"
+    zle accept-line
+  else
+    LBUFFER=""
+    zle accept-line
+  fi
 }
 zle     -N   fzf-open-vi
 bindkey '^V' fzf-open-vi
@@ -37,8 +41,14 @@ space-or-autocomplete() {
     zle accept-line
   elif [[ $BUFFER == 'pj' ]]; then
     if [[ -f package.json ]]; then
-    BUFFER="yarn run $(cat package.json | jq -r ".scripts | keys | .[]" | fzf)"
-      zle accept-line
+      local script=$(cat package.json | jq -r ".scripts | keys | .[]" | fzf)
+      if [[ ! -z "$script" ]]; then
+        LBUFFER="yarn run $script"
+        zle accept-line
+      else
+        LBUFFER=""
+        zle accept-line
+      fi
     else
       zle self-insert
     fi
