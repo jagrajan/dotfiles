@@ -24,3 +24,31 @@ open-lazygit() {
 
 zle     -N   open-lazygit
 bindkey '^G' open-lazygit
+
+space-or-autocomplete() {
+  local res=''
+  # Check there are any custom configurations
+  if type "env-space-or-autocomplete" > /dev/null; then
+    res=$(env-space-or-autocomplete)
+  fi
+  # Prefer using custom configurations
+  if [[ ! -z "$res" ]]; then
+    BUFFER=$res
+    zle accept-line
+  elif [[ $BUFFER == 'pj' ]]; then
+    if [[ -f package.json ]]; then
+    BUFFER="yarn run $(cat package.json | jq -r ".scripts | keys | .[]" | fzf)"
+      zle accept-line
+    else
+      zle self-insert
+    fi
+  elif [[ $BUFFER == 'c' ]]; then
+    BUFFER="cd $(ls -1 | fzf)"
+    zle accept-line
+  else
+    zle self-insert
+  fi
+}
+
+zle -N space-or-autocomplete
+bindkey ' ' space-or-autocomplete
