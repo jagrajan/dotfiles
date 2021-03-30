@@ -40,6 +40,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'pwntester/octo.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'voldikss/vim-floaterm'
+Plug 'jpalardy/vim-slime'
 
 " Plugins with config
 " for f in split(glob('~/.config/nvim/plugins.d/*.vim'), "\n")
