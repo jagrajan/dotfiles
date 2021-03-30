@@ -20,11 +20,11 @@ snippet "cl"
 console.log({ $1 });
 endsnippet
 
-snippet "(\w+).log" "Postfix log" r
+snippet "([\w\(\)\.]+).log" "Postfix log" r
 console.log({ `!p snip.rv = match.group(1) ` });
 endsnippet
 
-snippet "(\w+).ds" "Postfix destructure" r
+snippet "([\w\(\)\.]+).ds" "Postfix destructure" r
 const { $1 } = `!p snip.rv = match.group(1) `;
 endsnippet
 
