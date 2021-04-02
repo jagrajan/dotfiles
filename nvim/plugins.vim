@@ -32,8 +32,9 @@ Plug 'vim-test/vim-test'
 Plug 'benmills/vimux'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'romgrk/nvim-treesitter-context'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -42,6 +43,8 @@ Plug 'pwntester/octo.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'voldikss/vim-floaterm'
 Plug 'jpalardy/vim-slime'
+Plug 'tjdevries/cyclist.vim'
+Plug 'windwp/nvim-ts-autotag'
 
 " Plugins with config
 " for f in split(glob('~/.config/nvim/plugins.d/*.vim'), "\n")
