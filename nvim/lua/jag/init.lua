@@ -1,4 +1,5 @@
 require 'jag/config/lsp'
+require 'jag/config/nvim-compe'
 require 'jag/config/plugins'
 require 'jag/config/telescope'
 require 'jag/commands/git'
