@@ -11,8 +11,8 @@ local g = vim.g
 
 -- UltiSnips
   g.UltiSnipsExpandTrigger = '<tab>'
-  g.UltiSnipsJumpForwardTrigger = '<c-j>'
-  g.UltiSnipsJumpBackwardTrigger = '<c-k>'
+  g.UltiSnipsJumpForwardTrigger = '<tab>'
+  g.UltiSnipsJumpBackwardTrigger = '<s-tab>'
   g.UltiSnipsEditSplit = 'vertical'
   g.UltiSnipsSnippetDirectories = {'~/.config/nvim/UltiSnips'}
 
