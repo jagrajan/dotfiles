@@ -3,6 +3,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Plugins with no config
 Plug 'lifepillar/pgsql.vim'
 Plug 'SirVer/ultisnips'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'honza/vim-snippets'
 Plug 'yggdroot/indentline'
 Plug 'tpope/vim-fugitive'

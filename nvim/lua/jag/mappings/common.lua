@@ -70,17 +70,7 @@ b('o', 'al', '<cmd>normal val<cr>')
 -- br('i', {'expr'}, '<c-p>', 'pumvisible() ? "<c-p>" : "<Plug>(completion_trigger)"')
 -- b('i', {'expr'}, '<cr>',  'pumvisible() ? "<Plug>(completion_confirm_completion)" : "<cr>"')
 
--- inoremap <silent><expr> <C-Space> compe#complete()
--- inoremap <silent><expr> <CR>      compe#confirm('<CR>')
--- inoremap <silent><expr> <C-e>     compe#close('<C-e>')
--- inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
--- inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
-b('i', {'expr'}, '<c-cr>',  "compe#complete()")
-b('i', {'expr'}, '<cr>',  "compe#confirm('<cr>')")
-b('i', {'expr'}, '<c-l>',  "compe#close('<c-l>')")
-b('i', {'expr'}, '<c-f>',  "compe#scroll({ 'delta': +4 })")
-b('i', {'expr'}, '<c-d>',  "compe#scroll({ 'delta': -4 })")
-
+b('i', {'expr'}, '<c-o>',  "compe#confirm('<c-o>')")
 
 local leader_mappings = {
   ['n <c-w>q'] = 'tabclose',
