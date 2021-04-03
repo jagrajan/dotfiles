@@ -29,6 +29,15 @@ open-lazygit() {
 zle     -N   open-lazygit
 bindkey '^G' open-lazygit
 
+# <m-r>: open ranger
+open-ranger() {
+  BUFFER=ranger
+  zle accept-line
+}
+
+zle     -N   open-ranger
+bindkey '^[r' open-ranger
+
 space-or-autocomplete() {
   local res=''
   # Check there are any custom configurations
