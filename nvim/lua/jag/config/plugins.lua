@@ -27,3 +27,7 @@ local g = vim.g
 
 -- vim-slime
   g.slime_target = 'neovim'
+
+-- gruvbox-material
+  g.gruvbox_material_background = 'soft'
+  vim.cmd('colorscheme gruvbox-material')
