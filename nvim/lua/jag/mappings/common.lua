@@ -1,96 +1,14 @@
 local b = require 'vimp'.bind
-local br = require 'vimp'.rbind
 local nvim_create_augroups = require 'jag/util/nvim_utils'.nvim_create_augroups
-
--- Very commonly used, deserve their own binding
-b('n', 'gq', '<cmd>q<cr>')
-b('n', 'gQ', '<cmd>qa<cr>')
-b('n', 'gw', '<cmd>w<cr>')
-b('n', {'silent'} , 'gn', '<cmd>noh<cr>')
-
--- Make Y behave similarly to C and D
-b('n', 'Y', 'y$')
-
--- Dont't replace the register when pasting in visual mode
-b('x', 'p', 'pgvy')
-
--- Mappings related to editing vim config
-b('n', '<leader>ve', '<cmd>tabedit $MYVIMRC<cr>:lcd %:p:h<cr>')
-b('n', '<leader>vr', '<cmd>so $MYVIMRC<cr>')
-b('n', '<leader>vp', '<cmd>:PlugInstall<cr>')
-
--- Used for quickly jumping around in a file:
---    1: Use / for case-insensitive search or ? for case-sensitive search
---    2: Use <c-n> and <c-p> to jump to highlights.
---    3: Press <cr> to confirm and add to jumplist.
-b('nx', '/', '/\\c')
-b('nx', '?', '/')
-
-b('c', {'expr'}, '<c-n>', [[getcmdtype() =~ '[\/?]' ? "<c-g>" : "<c-n>"]])
-b('c', {'expr'}, '<c-p>', [[getcmdtype() =~ '[\/?]' ? "<c-t>" : "<c-p>"]])
-b('c', {'expr', 'silent'}, '<cr>', [[getcmdtype() =~ '[\/?]' ? "<cr><cmd>noh<cr>" : "<cr>"]])
-
--- More natural j and k movements for wrapped lines
-b('nvx', 'j', 'gj')
-b('nvx', 'k', 'gk')
-
--- Use c+vim keys to jump between windows
-for _, v in ipairs({'h', 'j', 'k', 'l'}) do
-  b('n', '<c-' .. v .. '>', '<c-w>' .. v)
-end
-
--- Quickly change tabs
-b('n', {'silent'}, '[t', '<cmd>tabprev<cr>')
-b('n', {'silent'}, ']t', '<cmd>tabnext<cr>')
-b('n', {'silent'}, '[T', '<cmd>tabfirst<cr>')
-b('n', {'silent'}, ']T', '<cmd>tablast<cr>')
-
-b('n', {'silent'}, '<left>',  '<cmd>vertical resize +3<cr>')
-b('n', {'silent'}, '<right>', '<cmd>vertical resize -3<cr>')
-b('n', {'silent'}, '<up>',    '<cmd>resize +3<cr>')
-b('n', {'silent'}, '<down>',  '<cmd>resize -3<cr>')
-
--- Quickly change conceal level
-for i = 0,3 do
-  b('n', {'silent'}, '<leader>l' .. i, ':setl conceallevel=' .. i .. '<cr>')
-end
-
--- Stay in visual mode when indenting/unindenting
-for _, v in ipairs({'<', '>'}) do
-  b('v', v, v .. 'gv')
-end
-
--- Line text objects
-b('x', 'il', 'g_o^')
-b('x', 'al', '$o0')
-b('o', 'il', '<cmd>normal vil<cr>')
-b('o', 'al', '<cmd>normal val<cr>')
-
--- completion.nvim
--- br('i', {'expr'}, '<c-p>', 'pumvisible() ? "<c-p>" : "<Plug>(completion_trigger)"')
--- b('i', {'expr'}, '<cr>',  'pumvisible() ? "<Plug>(completion_confirm_completion)" : "<cr>"')
 
 b('i', {'expr'}, '<c-o>',  "compe#confirm('<c-o>')")
 
 local leader_mappings = {
   ['n <c-w>q'] = 'tabclose',
-  ['n ff'] = 'Files', -- find files
-  ['n fa'] = 'Commands', -- find action
   ['n fr'] = 'lua require("telescope.builtin").oldfiles()', -- find recent
-  ['n fb'] = 'Buffers', -- find buffers
   ['n fh'] = 'lua require("telescope.builtin").builtin()', -- find "help"
-  ['n gO'] = 'GBrowse!',
-  ['x go'] = 'GBrowse!',
-  ['n gg'] = 'Git<cr><c-w><s-t>',
-  ['n GG'] = 'Git<cr><c-w><s-t>:tabonly<cr>',
-  ['n gc'] = 'Git commit',
-  ['n ga'] = 'Git blame',
   ['n gb'] = 'lua require("telescope.builtin").git_branches()',
-  ['n gh'] = 'GV!',
-  ['n gv'] = 'Gvdiffsplit',
   ['n hr'] = 'GitGutter',
-  ['n hh'] = 'GitGutterLineHighlightsToggle',
-  ['n hu'] = 'GitGutterUndoHunk',
   ['n ld'] = 'lua vim.lsp.buf.definition()',
   ['n lpd'] = 'Lspsaga preview_definition',
   ['n lf'] = 'lua vim.lsp.buf.formatting()',
@@ -112,22 +30,10 @@ for key, cmd in pairs(leader_mappings) do
   b(mode, {'silent'}, '<leader>' .. keys, ':' .. cmd .. '<cr>')
 end
 
-b('n', {'silent'}, '<leader>go', 'V:GBrowse!<cr><esc>')
 b('n', '<leader>fe', ':Rg ')
-b('n', {'silent'}, '[c', '<cmd>GitGutterPrevHunk<cr>')
-b('n', {'silent'}, ']c', '<cmd>GitGutterNextHunk<cr>')
-b('i', '<c-a>', '<c-o>^')
-b('i', '<c-e>', '<c-o>$')
 
 b('n', ']d', ':Lspsaga diagnostic_jump_next<cr>')
 b('n', '[d', ':Lspsaga diagnostic_jump_prev<cr>')
-b('n', {'silent'} ,'<leader>os', ':FloatermNew --width=0.8 --height=0.8 rg<cr>')
-b('n', {'silent'} ,'<leader>og', ':FloatermNew --width=0.8 --height=0.8 lazygit<cr>')
-b('n', {'silent'} ,'<leader>of', ':FloatermNew --width=0.8 --height=0.8 fzf<cr>')
-b('n', {'silent'} ,'<leader>or', ':FloatermNew --width=0.8 --height=0.8 ranger<cr>')
-b('n', {'silent'} ,'<leader>ob', ':FloatermNew --width=0.8 --height=0.8 broot<cr>')
-b('n', {'silent'} ,'<leader>on', ':tabe<cr>:lcd ~/workspaces/notes<cr>:Files<cr>')
-b('n', {'silent'} ,'<leader>ot', ':FloatermNew<cr>')
 
 FILETYPE_HOOKS = {
   dirvish = function ()
