@@ -1,40 +1,6 @@
 local b = require 'vimp'.bind
 local nvim_create_augroups = require 'jag/util/nvim_utils'.nvim_create_augroups
 
-b('i', {'expr'}, '<c-o>',  "compe#confirm('<c-o>')")
-
-local leader_mappings = {
-  ['n <c-w>q'] = 'tabclose',
-  ['n fr'] = 'lua require("telescope.builtin").oldfiles()', -- find recent
-  ['n fh'] = 'lua require("telescope.builtin").builtin()', -- find "help"
-  ['n gb'] = 'lua require("telescope.builtin").git_branches()',
-  ['n hr'] = 'GitGutter',
-  ['n ld'] = 'lua vim.lsp.buf.definition()',
-  ['n lpd'] = 'Lspsaga preview_definition',
-  ['n lf'] = 'lua vim.lsp.buf.formatting()',
-  ['n li'] = 'lua vim.lsp.buf.implementation()',
-  ['n lsh'] = 'Lspsaga signature_help',
-  ['n lrn'] = 'Lspsaga rename',
-  ['n lh'] = 'Lspsaga hover_doc',
-  ['n lca'] = 'Lspsaga code_action',
-  ['n lsd'] = 'Lspsaga show_line_diagnostics',
-  ['n lrr'] = 'lua vim.lsp.buf.references()',
-  ['n ue'] = 'UltiSnipsEdit',
-  ['n ua'] = 'UltiSnipsEdit all'
-}
-
-for key, cmd in pairs(leader_mappings) do
-  local fields = vim.split(key, ' ')
-  local mode = fields[1]
-  local keys = fields[2]
-  b(mode, {'silent'}, '<leader>' .. keys, ':' .. cmd .. '<cr>')
-end
-
-b('n', '<leader>fe', ':Rg ')
-
-b('n', ']d', ':Lspsaga diagnostic_jump_next<cr>')
-b('n', '[d', ':Lspsaga diagnostic_jump_prev<cr>')
-
 FILETYPE_HOOKS = {
   dirvish = function ()
     -- Create a new file
@@ -66,12 +32,3 @@ for filetype, _ in pairs(FILETYPE_HOOKS) do
 end
 
 nvim_create_augroups(autocmds)
-
-local scratch_mappings = {
-  j = 'json',
-  s = 'sql'
-}
-
-for k, ft in pairs(scratch_mappings) do
-  b('n', '<leader>s' .. k, ':tabedit<cr>:set ft=' .. ft .. '<cr>')
-end
