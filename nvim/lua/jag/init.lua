@@ -1,6 +1,9 @@
 require 'jag/commands/git'
 require 'jag/mappings/common'
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
+
 -- Editing neovim config
   -- Open vimrc in new tab
   vim.api.nvim_set_keymap('n', '<leader>ve', ':tabedit $MYVIMRC<cr>lcd %:p:h<cr>', { silent = true, noremap = true })
@@ -24,11 +27,10 @@ require 'jag/mappings/common'
   vim.o.hidden = true
   vim.o.splitbelow = true
   vim.o.splitright = true
+  vim.o.termguicolors = true
   vim.o.updatetime = 100
   vim.o.updatetime = 100
   vim.wo.foldmethod = "indent"
-  vim.g.mapleader = " "
-  vim.g.maplocalleader = ","
 
 -- Global related keymaps
   vim.api.nvim_set_keymap('n', ';', ':', { noremap = true })
@@ -222,6 +224,137 @@ require 'jag/mappings/common'
 
   telescope.load_extension('fzy_native')
   telescope.load_extension('octo')
+
+-- galaxyline
+local galaxyline = require('galaxyline')
+local galaxyline_colors = require('galaxyline.theme').default
+local galaxyline_condition = require('galaxyline.condition')
+local galaxyline_section = galaxyline.section
+galaxyline_section.left[1] = {
+  ViMode = {
+    provider = function()
+      -- auto change color according the vim mode
+      local mode_color = {
+        n = galaxyline_colors.red,
+        i = galaxyline_colors.green,
+        v=galaxyline_colors.blue,
+        [''] = galaxyline_colors.blue,
+        V=galaxyline_colors.blue,
+        c = galaxyline_colors.magenta,
+        no = galaxyline_colors.red,
+        s = galaxyline_colors.orange,
+        S=galaxyline_colors.orange,
+        [''] = galaxyline_colors.orange,
+        ic = galaxyline_colors.yellow,
+        R = galaxyline_colors.violet,
+        Rv = galaxyline_colors.violet,
+        cv = galaxyline_colors.red,
+        ce=galaxyline_colors.red,
+        r = galaxyline_colors.cyan,
+        rm = galaxyline_colors.cyan,
+        ['r?'] = galaxyline_colors.cyan,
+        ['!']  = galaxyline_colors.red,
+        t = galaxyline_colors.red}
+      vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()] ..' guibg='..galaxyline_colors.bg)
+      return ' '
+    end,
+  },
+}
+
+galaxyline_section.left[2] ={
+  FileIcon = {
+    provider = 'FileIcon',
+    condition = galaxyline_condition.buffer_not_empty,
+    highlight = { require('galaxyline.provider_fileinfo').get_file_icon_color, galaxyline_colors.bg },
+  },
+}
+
+galaxyline_section.left[3] = {
+  FileName = {
+    provider = 'FileName',
+    condition = galaxyline_condition.buffer_not_empty,
+    highlight = { galaxyline_colors.fg, galaxyline_colors.bg, 'bold' }
+  }
+}
+
+galaxyline_section.left[8] = {
+  DiagnosticError = {
+    provider = 'DiagnosticError',
+    icon = '  ',
+    highlight = {galaxyline_colors.red,galaxyline_colors.bg}
+  }
+}
+galaxyline_section.left[9] = {
+  DiagnosticWarn = {
+    provider = 'DiagnosticWarn',
+    icon = '  ',
+    highlight = {galaxyline_colors.yellow,galaxyline_colors.bg},
+  }
+}
+
+galaxyline_section.left[10] = {
+  DiagnosticHint = {
+    provider = 'DiagnosticHint',
+    icon = '  ',
+    highlight = {galaxyline_colors.cyan,galaxyline_colors.bg},
+  }
+}
+
+galaxyline_section.left[11] = {
+  DiagnosticInfo = {
+    provider = 'DiagnosticInfo',
+    icon = '  ',
+    highlight = {galaxyline_colors.blue,galaxyline_colors.bg},
+  }
+}
+
+galaxyline_section.right[3] = {
+  GitIcon = {
+    provider = function() return '  ' end,
+    condition = galaxyline_condition.check_git_workspace,
+    separator = ' ',
+    separator_highlight = {'NONE',galaxyline_colors.bg},
+    highlight = {galaxyline_colors.violet,galaxyline_colors.bg,'bold'},
+  }
+}
+
+galaxyline_section.right[4] = {
+  GitBranch = {
+    provider = 'GitBranch',
+    condition = galaxyline_condition.check_git_workspace,
+    highlight = {galaxyline_colors.violet,galaxyline_colors.bg,'bold'},
+  }
+}
+
+galaxyline_section.right[5] = {
+  DiffAdd = {
+    provider = 'DiffAdd',
+    condition = galaxyline_condition.hide_in_width,
+    icon = '  ',
+    separator = ' ',
+    separator_highlight = {'NONE',galaxyline_colors.bg},
+    highlight = { galaxyline_colors.green, galaxyline_colors.bg },
+  }
+}
+
+galaxyline_section.right[6] = {
+  DiffModified = {
+    provider = 'DiffModified',
+    condition = galaxyline_condition.hide_in_width,
+    icon = ' 柳',
+    highlight = { galaxyline_colors.orange, galaxyline_colors.bg },
+  }
+}
+galaxyline_section.right[7] = {
+  DiffRemove = {
+    provider = 'DiffRemove',
+    condition = galaxyline_condition.hide_in_width,
+    icon = '  ',
+    highlight = { galaxyline_colors.red, galaxyline_colors.bg },
+  }
+}
+
+
 
 -- neovim lsp
   local nvim_lsp = require('lspconfig')

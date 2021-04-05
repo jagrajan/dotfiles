@@ -47,6 +47,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'jpalardy/vim-slime'
 Plug 'tjdevries/cyclist.vim'
 Plug 'windwp/nvim-ts-autotag'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'kyazdani42/nvim-web-devicons' " lua
 
 " Plugins with config
 " for f in split(glob('~/.config/nvim/plugins.d/*.vim'), "\n")
