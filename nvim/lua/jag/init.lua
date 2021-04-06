@@ -69,6 +69,17 @@ vim.g.maplocalleader = ","
   vim.api.nvim_set_keymap('v', '<leader>p', '"+p', { noremap = true })
   vim.api.nvim_set_keymap('v', '<leader>P', '"+P', { noremap = true })
 
+-- Lua util functions
+  local function create_augroup(autocmds, name)
+    vim.cmd('augroup ' .. name)
+    vim.cmd('autocmd!')
+    for _, autocmd in ipairs(autocmds) do
+        vim.cmd('autocmd ' .. table.concat(autocmd, ' '))
+    end
+    vim.cmd('augroup END')
+  end
+
+
 -- Text objects
   -- al = entire line
   -- il = entre line but trim the whitespace at the front
@@ -505,3 +516,9 @@ vim.g.maplocalleader = ","
       enable = true,
     },
   }
+
+-- autogroups
+create_augroup({
+  {"VimEnter,WinEnter,BufWinEnter", "*", "setlocal", "cursorline"},
+  {"WinLeave", "*", "setlocal", "nocursorline"},
+}, 'CursorLine')
