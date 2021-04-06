@@ -8,16 +8,6 @@ let g:dev = "postgresql://fhirbase@localhost:5433/fhirbase"
 " the issue so far.
 syntax sync fromstart
 
-"---[ Copy/paste clipboard ]---"
-vnoremap <leader>y "+y
-nnoremap <leader>Y "+yg_
-nnoremap <leader>y "+y
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P⎈
-
-
 " Duplicate current buffer in new tab
 nnoremap <c-w>d :tab split<cr>
 
