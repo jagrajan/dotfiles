@@ -62,7 +62,7 @@ space-or-autocomplete() {
       zle self-insert
     fi
   elif [[ $BUFFER == 'c' ]]; then
-    BUFFER="cd $(ls -1 | fzf)"
+    BUFFER="cd $(ls -1a | fzf)"
     zle accept-line
   else
     zle self-insert
