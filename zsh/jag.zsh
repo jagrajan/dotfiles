@@ -61,8 +61,13 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 alias bl="xbacklight -set"
-export VISUAL=nvim
-export EDITOR=nvim
+if ! type "floaterm" > /dev/null; then
+  export VISUAL=nvim
+  export EDITOR=nvim
+else
+  export VISUAL=floaterm
+  export EDITOR=floaterm
+fi
 
 if ! type "bat" > /dev/null; then
   echo 'no bat found'
