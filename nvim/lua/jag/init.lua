@@ -145,6 +145,8 @@ vim.g.maplocalleader = ","
   vim.api.nvim_set_keymap('n', '<leader>gv', ':Gvdiffspit<cr>', { silent = true, noremap = true })
 
 -- GitGutter
+  vim.g.gitgutter_sign_allow_clobber = 0
+  vim.g.gitgutter_sign_priority = 5
   vim.api.nvim_set_keymap('n', '<leader>ht', ':GitGutterLineHighlightsToggle<cr>', { silent = true, noremap = true })
   vim.api.nvim_set_keymap('n', '<leader>hu', ':GitGutterUndoHunk<cr>', { silent = true, noremap = true })
   vim.api.nvim_set_keymap('n', '[c', ':GitGutterPrevHunk<cr>', { silent = true, noremap = true })
@@ -518,7 +520,18 @@ vim.g.maplocalleader = ","
   }
 
 -- autogroups
-create_augroup({
-  {"VimEnter,WinEnter,BufWinEnter", "*", "setlocal", "cursorline"},
-  {"WinLeave", "*", "setlocal", "nocursorline"},
-}, 'CursorLine')
+  create_augroup({
+    {"VimEnter,WinEnter,BufWinEnter", "*", "setlocal", "cursorline"},
+    {"WinLeave", "*", "setlocal", "nocursorline"},
+  }, 'CursorLine')
+
+-- highlight
+  vim.cmd('highlight LspDiagnosticsDefaultError guifg=BrightRed')
+  vim.cmd('highlight LspDiagnosticsVirtualTextError guifg=BrightRed')
+  vim.cmd('highlight LspDiagnosticsFloatingError guifg=BrightRed')
+  vim.cmd('highlight LspDiagnosticsUnderlineError guifg=BrightRed')
+  vim.fn.sign_define("LspDiagnosticsSignError", { texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError" })
+  vim.fn.sign_define("LspDiagnosticsSignWarning", { texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning" })
+  vim.fn.sign_define("LspDiagnosticsSignHint", { texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint" })
+  vim.fn.sign_define("LspDiagnosticsSignInformation", { texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation" })
+
