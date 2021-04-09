@@ -22,7 +22,7 @@ bindkey '^O' open-workspaces
 
 # <c-g>: open lazygit
 open-lazygit() {
-  lazygit
+  LBUFFER=lazygit
   zle accept-line
 }
 
