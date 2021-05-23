@@ -29,6 +29,15 @@ open-lazygit() {
 zle     -N   open-lazygit
 bindkey '^G' open-lazygit
 
+# <m-d>: open lazydocker
+open-lazydocker() {
+  LBUFFER=lazydocker
+  zle accept-line
+}
+
+zle     -N    open-lazydocker
+bindkey '^[d' open-lazydocker
+
 # <m-r>: open ranger
 open-ranger() {
   BUFFER=ranger
