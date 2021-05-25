@@ -62,8 +62,12 @@ space-or-autocomplete() {
       zle self-insert
     fi
   elif [[ $BUFFER == 'c' ]]; then
-    BUFFER="cd $(ls -1a | fzf)"
-    zle accept-line
+    dest=$(ls -1a -D | fzf)
+    if [[ ! -z "$dest" ]]; then
+      LBUFFER="cd $dest"
+      zle accept-line
+    fi
+    zle self-insert
   else
     zle self-insert
   fi
