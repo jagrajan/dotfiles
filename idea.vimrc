@@ -26,6 +26,8 @@ map <leader>fr :action RecentFiles<CR>
 map <leader>fs :action GotoSymbol<CR>
 map gr :action FindUsages<CR>
 nnoremap - :action SelectInProjectView<CR>
+nnoremap [t :tabprevious<CR>
+nnoremap ]t :tabnext<CR>
 
 """ Debug --------a----------------------------------------
 map <leader>db :action ToggleLineBreakpoint<CR>
