@@ -23,3 +23,4 @@ alias a="alias"
 alias -g R='| rg --pretty'
 alias -g L='| bat --paging=always'
 alias goo="googler --count=4"
+alias dc='docker-compose'
