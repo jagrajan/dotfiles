@@ -14,18 +14,20 @@ inoremap <c-p> <up>
 xnoremap p pgvy
 
 """ Config ------------------------------------------------
-map <leader>ve :edit ~/.ideavimrc<CR>
-map <leader>vs :actionlist<space>
+nnoremap <leader>ve :edit ~/.ideavimrc<CR>
+nnoremap <leader>vs :actionlist<space>
+nnoremap <leader>vr :source ~/.ideavimrc<CR>
 
 """ Navigation --------------------------------------------
-map <leader>fa :action GotoAction<CR>
-map <leader>fe :action SearchEverywhere<CR>
-map <leader>ff :action GotoFile<CR>
-map <leader>fn :action ShowNavBar<CR>
-map <leader>fr :action RecentFiles<CR>
-map <leader>fs :action GotoSymbol<CR>
-map gr :action FindUsages<CR>
+nnoremap <leader>fa :action GotoAction<CR>
+nnoremap <leader>fe :action SearchEverywhere<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fn :action ShowNavBar<CR>
+nnoremap <leader>fr :action RecentFiles<CR>
+nnoremap <leader>fs :action GotoSymbol<CR>
+nnoremap gr :action FindUsages<CR>
 nnoremap - :action SelectInProjectView<CR>
+nnoremap / :action Find<CR>
 nnoremap [t :tabprevious<CR>
 nnoremap ]t :tabnext<CR>
 
@@ -57,7 +59,7 @@ nnoremap [c :action VcsShowPrevChangeMarker<cr>
 nnoremap ]c :action VcsShowNextChangeMarker<cr>
 
 """ Splits ------------------------------------------------
-map <leader>wq :action CloseEditorsGroup<CR>
+map <leader>wq :action CloseAllEditors<CR>
 map <leader>ww :action CloseActiveTab<CR>
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
@@ -65,18 +67,21 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 """ Editing -----------------------------------------------
-map <leader>ee :action Javascript.Linters.EsLint.Fix<CR>
-map <leader>ef :action Refactorings.QuickListPopupActionCR>
-map <leader>eh :action MoveElementLeft<CR>
-map <leader>ei :action ShowIntentionActions<CR>
-map <leader>el :action MoveElementRight<CR>
-map <leader>ep :action ReformatWithPrettierAction<CR>
-map <leader>er :action ReformatCode<CR>
+nnoremap <leader>ee :action Javascript.Linters.EsLint.Fix<CR>
+nnoremap <leader>ef :action Refactorings.QuickListPopupActionCR>
+nnoremap <leader>eh :action MoveElementLeft<CR>
+nnoremap <leader>ei :action ShowIntentionActions<CR>
+nnoremap <leader>el :action MoveElementRight<CR>
+nnoremap <leader>ep :action ReformatWithPrettierAction<CR>
+nnoremap <leader>er :action ReformatCode<CR>
 
 """ Open --------------------------------------------------
-map <leader>od :action ActivateDebugToolWindow<CR>
-map <leader>on :action ActivatenpmToolWindow<CR>
-map <leader>op :action ActivateProjectToolWindow<CR>
-map <leader>or :action ActivateRunToolWindow<CR>
-map <leader>os :action FileStructurePopup<CR>
-map <leader>ot :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>od :action ActivateDatabaseToolWindow<CR>
+nnoremap <leader>on :action ActivatenpmToolWindow<CR>
+nnoremap <leader>op :action ActivateProjectToolWindow<CR>
+nnoremap <leader>or :action ActivateRunToolWindow<CR>
+nnoremap <leader>os :action FileStructurePopup<CR>
+nnoremap <leader>ot :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>oj :action ActivateTeamCityToolWindow<CR>
+nnoremap <leader>oc :action ActivatePullRequestsToolWindow<CR>
+
